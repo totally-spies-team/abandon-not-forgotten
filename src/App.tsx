@@ -664,6 +664,14 @@ function StoryCard({ item, onBack }: { item: Equipment; onBack: () => void }) {
             <Float speed={1.1} rotationIntensity={0.25} floatIntensity={0.2}>
               <EquipmentModel type={item.type} scale={0.9} highlight />
             </Float>
+                        {/* Spin slowly by itself, and let visitors drag to turn it (like the NASA models) */}
+            <OrbitControls
+              autoRotate
+              autoRotateSpeed={4}
+              enableZoom={false}
+              enablePan={false}
+              enableDamping
+            />
           </Canvas>
         )}
       </div>
