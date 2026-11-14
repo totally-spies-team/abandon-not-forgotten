@@ -64,60 +64,89 @@ export const worlds: Record<WorldId, World> = {
         tabs: [
           {
             label: "📖 About",
-            text: `Meet Eagle! 🚀
+            text: `Meet Eagle!
 
-Before humans could walk on the Moon, NASA needed a special spacecraft to get them there and bring them back.
+Picture this: you are 384,400 kilometres from home. Outside your window is a world covered in grey dust. There are no roads, no buildings and no rescue team waiting nearby. You have one spacecraft to get down safely — and one chance to get back.
 
-Eagle was the Lunar Module of Apollo 11. It carried two astronauts, Neil Armstrong and Buzz Aldrin, to the Moon. It had two parts: a lower section with landing legs and an upper section where the astronauts lived and worked.`,
+That spacecraft was Eagle.
+
+Eagle was the Lunar Module of NASA's Apollo 11 mission. It carried Neil Armstrong and Buzz Aldrin from the Command/Service Module down to the Moon. It had two sections: a lower stage with four landing legs, and an upper stage where the astronauts lived and worked.
+
+Every part had a job. Every kilogram mattered. And soon, Eagle would carry two people into history.`,
           },
           {
             label: "🔧 Function",
-            text: `🛬 Landed astronauts safely on the Moon
-🚀 Carried astronauts back into lunar orbit
-🏠 Provided a small space for astronauts to live and work
-🔬 Stored scientific tools and equipment for Moon experiments
-📡 Communicated with Earth and the Command/Service Module`,
+            text: `Eagle was not simply a taxi to the Moon. It was a tiny spacecraft, a temporary home and a launch vehicle — all in one.
+
+Its jobs were to:
+- Carry Armstrong and Aldrin from lunar orbit down to the surface.
+- Give the astronauts a place to live, work and prepare for their moonwalk.
+- Store tools and equipment for exploring the Moon.
+- Help the astronauts communicate with Earth and the Command/Service Module.
+- Launch the astronauts from the Moon back into lunar orbit.
+
+Think about that: Eagle had to land on another world and then take off again. It had to do both jobs with no runway, no repair shop and no second try.`,
           },
           {
             label: "🚀 Launch",
-            text: `Eagle blasted off from Cape Canaveral on 16 July 1969 aboard a powerful Saturn V rocket.
+            text: `The countdown reached zero on 16 July 1969.
 
-It reached the Moon as part of Apollo 11 and landed on 20 July 1969 in a place called the Sea of Tranquility.
+Eagle began its journey tucked inside Apollo 11, which thundered away from Cape Canaveral aboard the enormous Saturn V rocket. After several days travelling through space, the spacecraft reached the Moon.
 
-🌕 It was the first crewed spacecraft to land on the Moon!`,
+Then came the moment everyone had been waiting for. On 20 July, Eagle separated from the Command/Service Module. Michael Collins stayed behind in orbit while Armstrong and Aldrin began their descent.
+
+The landing site was the Sea of Tranquility. The descent was tense, but Eagle touched down safely.
+
+For the first time, humans had landed on the Moon. The world was watching — and Eagle had brought them there.`,
           },
           {
             label: "🛰️ Mission",
-            text: `1. Travel to the Moon with the Apollo 11 spacecraft 🚀
-2. Separate from the Command/Service Module
-3. Fire its engine to slow down and land on the Moon
-4. Let Armstrong and Aldrin explore the lunar surface
-5. Collect Moon rocks, take photos and set up scientific experiments
-6. Fire the upper stage's engine to lift off from the Moon
-7. Reunite with the Command/Service Module, where Michael Collins was waiting
+            text: `Landing was only half the adventure. Eagle and its crew still had a long list of tasks to complete.
 
-🌟 The astronauts collected 21.55 kg of Moon rocks and soil during their mission!`,
+1. Travel to the Moon as part of the Apollo 11 spacecraft.
+2. Separate from the Command/Service Module, with Michael Collins remaining in lunar orbit.
+3. Fire its descent engine and guide Armstrong and Aldrin towards the surface.
+4. Land in the Sea of Tranquility.
+5. Give the astronauts a base for their moonwalk, where they collected rocks, took photographs and set up experiments.
+6. Fire the upper stage engine to lift off from the Moon.
+7. Meet the Command/Service Module again in lunar orbit.
+
+The astronauts returned with 21.55 kilograms of Moon rocks and soil. Those samples gave scientists precious clues about how the Moon formed and changed.
+
+Eagle had delivered its crew — and a little piece of the Moon — safely back towards Earth.`,
           },
           {
             label: "🕰️ Abandoned",
-            text: `Eagle's mission on the Moon ended on 21 July 1969, after the astronauts spent 21 hours and 36 minutes on the lunar surface.
+            text: `A spacecraft can make history and still leave something behind.
 
-🚀 The upper section lifted off to take Armstrong and Aldrin back to the Command/Service Module.
+After 21 hours and 36 minutes on the lunar surface, Armstrong and Aldrin were ready to go. On 21 July 1969, Eagle's upper stage fired its engine and lifted the astronauts back into lunar orbit.
 
-🛬 The lower section, with its four landing legs, was left behind on the Moon. It had finished its job and was never meant to return to Earth.
+But the lower stage did not come with them. Its four landing legs and landing equipment stayed at Tranquility Base. That was exactly what it had been designed to do: land, support the astronauts and become a launch platform.
 
-The upper section was later released into lunar orbit. Its exact fate is unknown, but scientists believe it crashed onto the Moon within 1–4 months.`,
+The upper stage later separated from the Command/Service Module. Its final location is uncertain, and scientists believe it eventually crashed onto the Moon.
+
+So Eagle's story has two endings: one part remains where humans first walked on the Moon, while the other disappeared from view.`,
           },
           {
-            label: "❄️ Why?",
-            text: `Eagle was designed in two parts because landing on the Moon and taking off again needed different equipment.
+            label: "❓ Why?",
+            text: `Why build Eagle in two pieces instead of one spacecraft that could do everything?
 
-🛬 The lower section carried the landing engine, fuel and four landing legs. It also acted as a platform for the upper section to take off.
-🚀 The upper section carried the astronauts and had its own engine to return them to lunar orbit.
-🎯 Leaving the heavy landing section behind meant the astronauts didn't have to carry unnecessary equipment back into space.
+Because getting to the Moon was not just about having enough power. It was also about carrying as little unnecessary weight as possible.
 
-✅ Mission accomplished! Eagle helped make the first human Moon landing possible.`,
-          },
+The lower stage did the heavy work:
+- Four landing legs supported Eagle on the lunar surface.
+- Its engine and fuel slowed the spacecraft for landing.
+- It became the platform from which the upper stage launched.
+
+The upper stage brought the astronauts home:
+- It held the crew during their time on the Moon.
+- It had its own engine to lift off from the lunar surface.
+- It carried what was needed to return to lunar orbit.
+
+Once the upper stage lifted off, there was no reason to carry the heavy landing stage with it. Leaving it behind saved weight and fuel.
+
+It was a clever solution to an extraordinary challenge. Eagle did not need to bring every part home to complete its mission — it only needed to bring the astronauts home.`,
+          }
         ],
       },
       {
@@ -137,55 +166,72 @@ The upper section was later released into lunar orbit. Its exact fate is unknown
         tabs: [
           {
             label: "📖 About",
-            text: `Meet the Apollo 15 Lunar Roving Vehicle, also called the LRV! 🚙🌕 It was the first vehicle ever driven by astronauts on the Moon.
+            text: `Meet the Lunar Roving Vehicle — the Moon's first set of wheels!
 
-It travelled with astronauts David Scott and James Irwin during the Apollo 15 mission. Its job was to help them explore places that would have been too far away to reach easily on foot.`,
+Before 1971, astronauts had to explore the Moon on foot. Their spacesuits were bulky, their steps were slow, and every extra metre took effort. What if they could travel farther?
+
+NASA's answer was the Lunar Roving Vehicle, or LRV: a small electric rover that travelled to the Moon with Apollo 15.
+
+Astronauts David Scott and James Irwin became its first drivers. Suddenly, the lunar landscape was no longer limited to the distance they could walk.`,
           },
           {
             label: "🔧 Function",
-            text: `The lunar rover was like a small electric car made for the Moon!
+            text: `Think of the LRV as an electric car built for one of the strangest roads imaginable.
 
-🛞 Carried astronauts across the lunar surface
-🪨 Helped them reach different places to collect Moon rocks and soil
-📸 Helped astronauts explore and photograph the landscape
-🧪 Supported the science work during their moonwalks
+It helped the astronauts:
+- Travel across the lunar surface instead of walking everywhere.
+- Reach rocks and locations farther from the landing site.
+- Carry tools and collected samples.
+- Photograph and investigate the landscape during their moonwalks.
 
-It helped the astronauts explore areas within about 5 km of their landing site.`,
+The rover allowed the crew to explore areas they could not have covered as easily on foot. It turned a moonwalk into a much bigger field expedition.`,
           },
           {
             label: "🚀 Launch",
-            text: `Apollo 15 launched from Cape Canaveral, Florida, on 26 July 1971 aboard a Saturn V rocket.
+            text: `The rover's journey began before it ever touched the Moon.
 
-The rover travelled to the Moon inside the lunar module Falcon. Falcon landed on 30 July 1971, and the astronauts unloaded and drove the rover during their first moonwalk on 31 July.`,
+Apollo 15 launched from Cape Canaveral, Florida, on 26 July 1971 aboard a Saturn V rocket. The LRV travelled folded up inside the lunar module, named Falcon.
+
+Falcon landed on 30 July. The astronauts then unfolded and prepared the rover. On 31 July, during their first moonwalk, Scott and Irwin climbed aboard and drove across the lunar surface.
+
+The Moon had its first drivers.`,
           },
           {
             label: "🛰️ Mission",
-            text: `The rover had a busy adventure on the Moon!
+            text: `The LRV had three big exploration trips ahead of it.
 
-1. 🌕 Apollo 15 landed near the Apennine Mountains on 30 July 1971.
-2. 🛞 David Scott and James Irwin unloaded the rover during their first moonwalk on 31 July.
-3. 🗺️ They drove it on three exploration trips around the landing area.
-4. 🪨 The astronauts collected 77.31 kg of Moon rocks and soil during the mission.
-5. 🏁 Across the three trips, the rover travelled about 27.9 km.
+1. Apollo 15 landed near the Apennine Mountains on 30 July 1971.
+2. On 31 July, David Scott and James Irwin unloaded the rover during their first moonwalk.
+3. They drove it on three trips to explore the landing area and nearby geological features.
+4. They collected 77.31 kilograms of Moon rocks and soil.
+5. Across the three trips, the rover travelled about 27.9 kilometres.
 
-The three moonwalks together lasted 18 hours and 35 minutes.`,
+Together, the three moonwalks lasted 18 hours and 35 minutes.
+
+The rover helped the astronauts bring home more than samples. It helped them reach places that could reveal more about the Moon's history.`,
           },
           {
             label: "🕰️ Abandoned",
-            text: `The rover was left on the Moon on 2 August 1971, after the astronauts finished their third and final moonwalk.
+            text: `Every journey eventually reaches its final stop.
 
-After spending 66 hours and 55 minutes on the lunar surface, the astronauts lifted off in Falcon's upper stage to meet their spacecraft orbiting the Moon. The rover stayed behind at the Apollo 15 landing site.`,
+After the astronauts completed their third and final moonwalk, the LRV was left on the Moon on 2 August 1971. Scott and Irwin returned to Falcon, spent a total of 66 hours and 55 minutes on the lunar surface, and then lifted off to meet their spacecraft in orbit.
+
+The rover stayed near the Apollo 15 landing site in the Hadley–Apennine region.
+
+It was not broken or forgotten. It had simply reached the end of the job it was built to do.`,
           },
           {
             label: "❓ Why?",
-            text: `The rover was made to explore the Moon, not to travel back to Earth.
+            text: `Why leave a perfectly useful rover behind?
 
-🚀 The astronauts returned to orbit using the upper part of the lunar module, Falcon.
-🛞 The rover was surface equipment, so it stayed where the astronauts had finished exploring.
-🌕 Leaving it behind allowed the mission to bring the astronauts home without carrying the rover.
+Because the LRV was designed as a surface explorer, not as a spacecraft that could fly back to Earth.
 
-Mission accomplished! The rover helped Apollo 15 explore much more of the Moon than astronauts could have covered on foot.`,
-          },
+The astronauts used Falcon's upper stage to return to lunar orbit. The rover had no system for launching itself from the Moon or travelling through space.
+
+Taking it home would also have meant carrying extra weight and using resources that the crew needed for their return.
+
+So the LRV stayed behind — a little electric vehicle parked on another world, after helping astronauts explore much more of it than they could have reached on foot.`,
+          }
         ],
       },
       {
@@ -258,47 +304,70 @@ That gave scientists a much longer record of the Moon than one visit could provi
         tabs: [
           {
             label: "📖 About",
-            text: `Before astronauts could walk on the Moon, NASA had a big worry: what if the ground was too soft? Some scientists thought spacecraft might sink into deep dust, like quicksand.
+            text: `Before people could safely land on the Moon, NASA had a question to answer: what was the ground really like?
 
-So NASA sent robot scouts called Surveyors to find out first. Each one was about 3 metres tall, stood on three legs and had a camera for eyes.`,
+Some scientists worried that the lunar surface might be covered in deep, soft dust. Could a spacecraft sink into it? Would its landing legs hold?
+
+NASA sent robotic scouts called Surveyors to investigate before astronauts made the journey.
+
+Surveyor 3 was one of those scouts. About three metres tall, standing on three legs and carrying a camera and a small scoop, it was sent to look closely at the Moon — before humans arrived.`,
           },
           {
             label: "🔧 Function",
-            text: `📸 Took thousands of close-up photos of the Moon
-🦶 Tested whether the ground could hold a spacecraft
-🥄 Dug trenches with a little robot scoop
-🗺️ Helped NASA pick safe landing spots for Apollo`,
+            text: `Surveyor 3 was a robot scout with a scientist's job.
+
+It was built to:
+- Photograph the lunar surface in close detail.
+- Test how the ground behaved when the spacecraft touched down.
+- Dig small trenches with its mechanical scoop.
+- Send its observations to Earth so NASA could choose safer Apollo landing sites.
+
+Instead of simply looking at the Moon from far away, Surveyor 3 could examine the ground right where it landed. Its work helped turn guesses about the lunar surface into real evidence.`,
           },
           {
             label: "🚀 Launch",
-            text: `Surveyor 3 blasted off on 17 April 1967 and landed on 20 April 1967.
+            text: `On 17 April 1967, Surveyor 3 left Earth on an Atlas-Centaur rocket.
 
-It was one of seven Surveyors launched between 1966 and 1968. Five landed safely, and two crashed.`,
+Three days later, on 20 April, it reached the Moon and began its landing attempt. It was one of seven Surveyor spacecraft launched between 1966 and 1968. Five landed successfully; two did not.
+
+Surveyor 3 had made it to the Moon. But its landing was about to become more dramatic than planned.`,
           },
           {
             label: "🛰️ Mission",
-            text: `1. Blast off from Florida on an Atlas-Centaur rocket 🔥
-2. Fly to the Moon in about 3 days
-3. Fire a rocket backwards to slow down
-4. Touch down on three padded legs
-5. Take photos, dig and beam the results to Earth
+            text: `Surveyor 3's landing did not go exactly as expected.
 
-😅 Fun fail: shiny rocks confused its radar and its engine didn't switch off in time, so it bounced twice before landing!`,
+1. It launched from Florida aboard an Atlas-Centaur rocket.
+2. It travelled through space for about three days.
+3. Its retrorockets fired to slow it down as it approached the Moon.
+4. It touched the surface on three padded landing legs.
+5. It began photographing the ground, digging small trenches and sending its findings to Earth.
+
+There was a surprise during touchdown: shiny rocks confused its radar, and its engine did not shut off at the right moment. Surveyor 3 bounced twice before finally settling on the surface.
+
+A rough landing — but a successful one. The little scout was ready to get to work.`,
           },
           {
             label: "🕰️ Abandoned",
-            text: `Surveyor 3 sent its last message on 4 May 1967, just two weeks after landing.
+            text: `Surveyor 3 sent its final message on 4 May 1967, just two weeks after landing. The lunar night brought its operations to an end, but its story was not over.
 
-But it wasn't forgotten! In November 1969, the Apollo 12 astronauts landed only 180 m away and walked over to visit. They took its camera and scoop home to Earth. It's the only robot on another world that people have ever visited.`,
+In November 1969, the Apollo 12 astronauts landed only about 180 metres away. They walked over to inspect the spacecraft and brought its camera and scoop back to Earth.
+
+Think about that: a robot sent ahead to prepare for human exploration was later visited by the very explorers it had helped.
+
+Surveyor 3 is still in the Ocean of Storms, making it a silent reminder of the missions that came before Apollo 12.`,
           },
           {
             label: "❄️ Why?",
-            text: `🌑 A night on the Moon lasts about two weeks and gets colder than −150 °C. Surveyor ran on solar power, so in the dark its electronics froze.
+            text: `Why did Surveyor 3 stop working — and why was it left behind?
 
-🎫 It was a one-way trip. Surveyors were never built to come home.
+A lunar night lasts about two weeks. Without sunlight, temperatures can fall below minus 150 degrees Celsius. Surveyor 3 relied on solar power, and the long, freezing darkness was too much for its electronics.
 
-✅ Mission accomplished! It proved the ground was firm enough for astronauts to land on.`,
-          },
+It was also designed as a one-way scout. It had no rocket or spacecraft to carry it back to Earth.
+
+But its mission was a success. Surveyor 3 helped show that the lunar surface could support a spacecraft, giving NASA valuable information before astronauts attempted their own landings.
+
+Sometimes the bravest explorer is the one that goes first.`,
+          }
         ],
       },
     ],
@@ -331,46 +400,67 @@ But it wasn't forgotten! In November 1969, the Apollo 12 astronauts landed only 
         tabs: [
           {
             label: "📖 About",
-            text: `Sojourner was the first rover to explore the surface of another planet.
+            text: `Meet Sojourner, the little rover that made a giant first step.
 
-It was 30 cm tall, weighed 10.6 kg, and was named after civil-rights activist Sojourner Truth.`,
+In 1997, NASA sent a small robot to Mars with a big job: drive across the surface of another planet for the very first time.
 
+Sojourner was only 30 centimetres tall and weighed 10.6 kilograms. It may have looked tiny beside the red Martian landscape, but it carried cameras and scientific instruments that could examine rocks and soil up close.
+
+It was named after Sojourner Truth, an American civil-rights activist. Its name suited a machine made to travel into the unknown.`,
           },
           {
             label: "🔧 Function",
-            text: `🚗 Drove around the Mars Pathfinder landing site
-🪨 Analyzed the composition of rocks and soil
-📸 Took close-up pictures of the Martian surface
-📡 Sent data to the Pathfinder lander, which relayed it to Earth`,
+            text: `Sojourner was small, but it had plenty to do.
+
+It:
+- Drove around the Mars Pathfinder landing site.
+- Examined the composition of nearby rocks and soil.
+- Took close-up photographs of the Martian surface.
+- Sent its pictures and scientific results to the Pathfinder lander.
+- Relied on the lander to relay its information across space to Earth.
+
+Sojourner was not just exploring for the sake of exploring. Every rock it examined helped scientists learn more about what Mars was made of.`,
           },
           {
             label: "🚀 Launch",
-            text: `Sojourner launched inside the Mars Pathfinder spacecraft on 4 December 1996.
+            text: `Sojourner began its journey to Mars inside the Pathfinder spacecraft, which launched on 4 December 1996.
 
-Pathfinder landed in Ares Vallis on 4 July 1997.`,
+After months travelling through space, Pathfinder reached Mars and landed in Ares Vallis on 4 July 1997.
+
+But the rover did not simply drive straight out of the spacecraft. First, Pathfinder had to land safely. Then Sojourner could begin its own adventure on the surface.`,
           },
           {
             label: "🛰️ Mission",
-            text: `1. Travel to Mars inside Pathfinder
-2. Land inside giant airbags that bounced across the surface
-3. Roll down the lander's ramp
-4. Explore nearby rocks and soil
-5. Send images and science data back through the lander`,
+            text: `Sojourner's first steps on Mars were unlike any drive on Earth.
+
+1. It travelled to Mars inside the Pathfinder spacecraft.
+2. Pathfinder entered the atmosphere and landed inside giant airbags that bounced across the surface.
+3. Once the lander was stable, Sojourner rolled down a ramp.
+4. It explored nearby rocks and soil, taking pictures and making measurements.
+5. It sent its findings to Pathfinder, which passed the information on to Earth.
+
+A small rover had become the first wheeled vehicle to operate on another planet. Every movement was a new achievement.`,
           },
           {
             label: "🕰️ Abandoned",
-            text: `The Pathfinder mission's final data arrived on 27 September 1997.
+            text: `Sojourner's mission ended when communication with Pathfinder stopped. The final data from the mission arrived on 27 September 1997.
 
-Sojourner remains on Mars, likely near the Pathfinder lander in Ares Vallis.`,
+The rover remains on Mars, likely near the Pathfinder lander in Ares Vallis.
+
+It may have been small and its mission may have been short, but Sojourner proved something important: a robot could drive across another planet, investigate its surface and send discoveries all the way home.`,
           },
           {
             label: "❓ Why?",
-            text: `🧭 Sojourner tested how a small rover could explore another planet.
+            text: `Why send such a tiny rover all the way to Mars?
 
-🔬 Its measurements helped scientists study Martian rocks and soil up close.
+NASA needed to test whether a small, mobile robot could explore another planet. Sojourner helped engineers learn how to drive a rover remotely and how to study rocks and soil from a distance.
 
-✅ Pathfinder returned its final data on 27 September 1997, ending the mission.`,
-          },
+Its measurements gave scientists a closer look at the Martian surface, while its successful journey helped pave the way for much larger rovers.
+
+Sojourner was never designed to return to Earth. Its job was to explore — and to show that future rovers could go even farther.
+
+For a robot only 30 centimetres tall, that was a huge achievement.`,
+          }
         ],
       },
       {
@@ -388,70 +478,77 @@ Sojourner remains on Mars, likely near the Pathfinder lander in Ares Vallis.`,
         // Spirit and Opportunity were identical twins, so they share NASA's MER model
         model: "/models/equipment/opportunity.glb",
       tabs: [
-    {
-      label: "📖 About",
-      text: `Meet Spirit! 🔴
+          {
+            label: "📖 About",
+            text: `Meet Spirit, the rover that refused to give up.
 
-What if Mars was once covered with water? NASA wanted to find out, so it sent two robot explorers to investigate the Red Planet.
+What if Mars was once a world of rivers and lakes instead of the cold, dusty planet we see today? NASA wanted evidence, so it sent two robotic geologists to investigate.
 
-Spirit was one of these twin rovers. It landed inside Gusev Crater, a giant crater that scientists thought might once have held a lake.
+Spirit was one of them. It landed inside Gusev Crater, a huge impact crater that scientists thought might once have held a lake.
 
-Spirit became a robot geologist, exploring rocks and soil to uncover clues about Mars's watery past.`,
-    },
-    {
-      label: "🔧 Function",
-      text: `📸 Took panoramic pictures of the Martian landscape
-🪨 Studied rocks and soil to discover what they were made of
-🔬 Used scientific instruments to investigate minerals
-🦾 Used a robotic arm to examine interesting rocks up close
-🗺️ Explored the surface and searched for signs of ancient water`,
-    },
-    {
-      label: "🚀 Launch",
-      text: `Spirit arrived on Mars on 3 January 2004.
+Spirit could not dig up the planet's entire history, but it could examine rocks, study soil and search for clues left behind by ancient water.`,
+          },
+          {
+            label: "🔧 Function",
+            text: `Spirit was a rolling science laboratory.
 
-It landed inside Gusev Crater, a huge impact crater that scientists believed might once have been a lake.
+It:
+- Took panoramic photographs of the Martian landscape.
+- Examined rocks and soil to learn what they were made of.
+- Used scientific instruments to investigate minerals.
+- Reached out with a robotic arm to study interesting rocks up close.
+- Explored the surface in search of evidence that water had once existed there.
 
-Spirit was one of two identical Mars Exploration Rovers sent to different parts of the planet. Its twin, Opportunity, landed a few weeks later on the other side of Mars.`,
-    },
-    {
-      label: "🛰️ Mission",
-      text: `Spirit's mission was to investigate Mars and search for evidence that liquid water had once existed there.
+Every rock was a clue. Spirit's job was to help scientists read the story written across the Martian landscape.`,
+          },
+          {
+            label: "🚀 Launch",
+            text: `Spirit arrived on Mars on 3 January 2004 and landed inside Gusev Crater.
 
-1. Travel through space to Mars 🚀
-2. Land safely inside Gusev Crater
-3. Take pictures of the surrounding landscape 📸
-4. Drive across the surface to explore rocks and soil
-5. Use scientific tools to study the rocks
-6. Send pictures and discoveries back to Earth 📡
+Scientists had chosen the crater because its shape suggested it might once have contained a lake. If water had been there, the rocks could hold evidence of Mars's past.
 
-🌟 Spirit travelled about 7.7 km across Mars and helped scientists discover evidence that water had existed there long ago!`,
-    },
-    {
-      label: "🕰️ Abandoned",
-      text: `Spirit's mission officially ended in 2010.
+Spirit was one of two identical Mars Exploration Rovers sent to different locations. Its twin, Opportunity, landed a few weeks later on the other side of the planet.
 
-It was originally designed for a mission lasting only 90 Martian days. But it kept exploring for more than six years!
+Two robots. Two locations. One enormous question: was Mars once wet enough to support life?`,
+          },
+          {
+            label: "🛰️ Mission",
+            text: `Spirit's mission was to investigate Mars and search for signs that liquid water had once existed there.
 
-After years of travelling and investigating the Red Planet, Spirit finally stopped operating.
+1. Travel through space to the Red Planet.
+2. Land safely inside Gusev Crater.
+3. Photograph the landscape to help scientists understand the terrain.
+4. Drive across the surface to investigate rocks and soil.
+5. Use its scientific tools to examine minerals and other clues.
+6. Send photographs and discoveries back to Earth.
 
-Even though it could no longer send messages, its discoveries continued helping scientists understand Mars.`,
-    },
-    {
-      label: "❄️ Why?",
-      text: `Why did NASA send Spirit all the way to Mars?
+Spirit travelled about 7.7 kilometres across Mars and helped scientists find evidence that water had played a role in the planet's past.
 
-Scientists wanted to know whether Mars was once warm and wet enough to support life.
+The rover was not looking for little green aliens. It was looking for something just as important: proof that Mars had once been a very different world.`,
+          },
+          {
+            label: "🕰️ Abandoned",
+            text: `Spirit was designed to work for just 90 Martian days. Instead, it kept exploring for more than six years.
 
-🌊 Gusev Crater looked like it might have been an ancient lake, making it a perfect place to investigate.
+Over time, it travelled across the surface, investigated rocks and sent discoveries back to Earth. But in 2010, it became stuck and could no longer move into a position that allowed it to keep operating through the Martian winter.
 
-🔬 By studying rocks and soil, Spirit found evidence that water had played a role in Mars's history.
+Its mission came to an end, but its discoveries did not disappear with its final signal. Scientists continued studying the information it had collected.
 
-🎯 Spirit wasn't designed to return to Earth. Its job was to explore, investigate and send its discoveries home.
+Spirit had outlasted its original plan by years — and helped rewrite the story of Mars.`,
+          },
+          {
+            label: "❄️ Why?",
+            text: `Why did NASA send Spirit to Gusev Crater?
 
-✅ Mission accomplished! It helped show that Mars had a much wetter past than the dry, dusty planet we see today.`,
-    },
-  ],
+Scientists wanted to find out whether Mars had once been warm and wet enough for liquid water to exist. Gusev Crater looked like it might have been an ancient lake, making it an exciting place to investigate.
+
+By studying rocks and soil, Spirit found evidence that water had affected the Martian surface long ago.
+
+Spirit was never meant to return to Earth. It was built to explore, investigate and send its findings across millions of kilometres of space.
+
+Its greatest achievement was not simply how far it travelled. It was what it helped us discover about Mars's watery past.`,
+          }
+        ],
 },
 {
   id: "opportunity",
@@ -468,78 +565,79 @@ Scientists wanted to know whether Mars was once warm and wet enough to support l
     "I'm Opportunity! I was built to explore for 90 days, but I kept rolling for almost 15 years and travelled over 45 kilometres!",
   model: "/models/equipment/opportunity.glb",
   tabs: [
-    {
-      label: "📖 About",
-      text: `Meet Opportunity! 🔴
+          {
+            label: "📖 About",
+            text: `Meet Opportunity, the rover that turned a 90-day job into a nearly 15-year adventure.
 
-Imagine being sent to Mars for just 90 days but continuing your adventure for almost 15 years!
+NASA built Opportunity to explore Mars for just 90 Martian days. But the little rover kept going — through rocky terrain, dusty skies and years of discoveries.
 
-Opportunity was one of NASA's twin Mars Exploration Rovers. Its job was to investigate rocks and soil for clues that water once existed on the Red Planet.
+It was one of two twin Mars Exploration Rovers. Its mission was to examine rocks and soil for clues that liquid water had once existed on the Red Planet.
 
-It landed at Meridiani Planum, a place with minerals that suggested Mars had a wet history.`,
-    },
-    {
-      label: "🔧 Function",
-      text: `📸 Captured thousands of pictures of the Martian landscape
-🪨 Examined rocks and soil for clues about ancient water
-🔬 Studied minerals to understand Mars's history
-🦾 Used a robotic arm to investigate rocks up close
-🗺️ Travelled across Mars to explore different locations`,
-    },
-    {
-      label: "🚀 Launch",
-      text: `Opportunity landed on Mars on 24 January 2004 (Pacific time).
+Opportunity landed at Meridiani Planum, where minerals called hematite offered an exciting hint: this region might have had a watery past.`,
+          },
+          {
+            label: "🔧 Function",
+            text: `Opportunity was a robot geologist with a camera for eyes and a laboratory of tools.
 
-Its landing site was Meridiani Planum, a flat region with deposits of a mineral called hematite.
+It:
+- Photographed the Martian landscape.
+- Examined rocks and soil for clues about ancient water.
+- Studied minerals to understand the planet's history.
+- Used a robotic arm to investigate rocks up close.
+- Travelled across Mars to explore new locations.
 
-Why was that exciting? 🤔 Hematite can form in environments where water is present, making this a great place to search for clues about Mars's past.
+The rover turned distant questions into close-up investigations. Instead of wondering what a rock might contain, scientists could ask Opportunity to examine it.`,
+          },
+          {
+            label: "🚀 Launch",
+            text: `Opportunity landed on Mars on 24 January 2004 (Pacific time).
 
-Opportunity was Spirit's twin rover, but each robot explored a different part of Mars.`,
-    },
-    {
-      label: "🛰️ Mission",
-      text: `Opportunity's mission was to search for signs that liquid water had once existed on Mars.
+Its home was Meridiani Planum, a flat region containing deposits of a mineral called hematite. Why did that matter? Hematite can form in environments where water is present, so the mineral made this a promising place to search for evidence of ancient water.
 
-1. Travel through space to the Red Planet 🚀
-2. Land safely at Meridiani Planum
-3. Take pictures of rocks and the surrounding landscape 📸
-4. Drive across Mars to investigate interesting locations
-5. Examine rocks and minerals using scientific instruments
-6. Send its discoveries back to Earth 📡
+Opportunity was the twin of Spirit, but the two rovers explored different parts of Mars. Each would follow its own trail of clues.`,
+          },
+          {
+            label: "🛰️ Mission",
+            text: `Opportunity's mission was to search for evidence that liquid water had once existed on Mars.
 
-🌟 Opportunity travelled an incredible 45.16 km across Mars!
+1. Travel through space to the Red Planet.
+2. Land at Meridiani Planum.
+3. Photograph rocks and the surrounding landscape.
+4. Drive across the surface to investigate interesting locations.
+5. Examine rocks and minerals using its scientific instruments.
+6. Send its discoveries back to Earth.
 
-It found evidence that water had been present on the planet long ago.`,
-    },
-    {
-      label: "🕰️ Abandoned",
-      text: `Opportunity sent its last message to Earth on 10 June 2018.
+Opportunity travelled an incredible 45.16 kilometres — far beyond its original plan.
 
-What happened? A huge dust storm spread across Mars and covered the area where Opportunity was exploring.
+Along the way, it found evidence that water had once been present on Mars. The dry, dusty landscape had a much wetter story hidden in its rocks.`,
+          },
+          {
+            label: "🕰️ Abandoned",
+            text: `For nearly 15 years, Opportunity kept sending messages from Mars.
 
-The rover depended on solar panels for power. With so much dust blocking sunlight, it could no longer generate enough electricity to keep communicating.
+Then, in 2018, a huge dust storm spread across the planet. Dust filled the sky and blocked sunlight from reaching the rover's solar panels.
 
-NASA tried to contact Opportunity again, but no more messages arrived.
+Opportunity sent its last communication to Earth on 10 June 2018. NASA tried to make contact again, but no more messages came.
 
-After almost 15 years of exploration, its mission came to an end.`,
-    },
-    {
-      label: "❄️ Why?",
-      text: `Why did Opportunity stop working?
+After almost 15 years of exploration, the mission was declared over. Opportunity remained at Meridiani Planum, where its long journey had finally stopped.
 
-🌪️ A massive dust storm covered the Martian sky and blocked sunlight from reaching its solar panels.
+It had been designed for 90 days. It gave scientists nearly 15 years of discoveries.`,
+          },
+          {
+            label: "❄️ Why?",
+            text: `Why did Opportunity stop working?
 
-🔋 Without enough sunlight, Opportunity could not generate the power it needed to operate and communicate with Earth.
+A massive dust storm darkened the Martian sky and covered the area where the rover was exploring. Because Opportunity relied on solar panels, it needed sunlight to generate electricity. With too little sunlight, it could not keep its systems running or communicate with Earth.
 
-But why was it exploring Mars in the first place?
+But why was it there in the first place?
 
-Scientists wanted to discover whether water had once existed on the planet. Opportunity found evidence that ancient Mars had a wetter environment.
+Scientists wanted to know whether Mars had once had liquid water. Opportunity found evidence that ancient Mars had a wetter environment than the one we see today.
 
-🎯 It was originally designed to work for just 90 days, but it explored for almost 15 years!
+It was meant to last 90 days. It travelled more than 45 kilometres and explored for almost 15 years.
 
-✅ Mission accomplished! Opportunity travelled much farther than expected and helped change what we know about Mars.`,
-    },
-  ],
+Sometimes a mission's greatest success is not doing what was planned — it is discovering how much more is possible.`,
+          }
+        ],
 },
       
 {
@@ -559,94 +657,77 @@ Scientists wanted to discover whether water had once existed on the planet. Oppo
     "Hi, I'm Viking 1! I landed on Mars in 1976 and sent Earth its first pictures from the Martian surface. I even searched the red soil for signs of life!",
   model: "/models/equipment/viking-lander.glb",
   tabs: [
-    {
-      label: "📖 About",
-      text: `Meet Viking 1! 🔴
+          {
+            label: "📖 About",
+            text: `Meet Viking 1, the spacecraft that gave Earth its first close-up view from the surface of Mars.
 
-Imagine being the first NASA spacecraft to successfully land on Mars!
+Before Viking 1 arrived, people had seen Mars through telescopes and spacecraft flying past or orbiting above it. But no NASA lander had yet completed a successful landing and sent back pictures from the ground.
 
-Viking 1 was part of NASA's Viking mission, which used two main parts: an orbiter that studied Mars from space and a lander that explored its surface.
+Viking 1 changed that on 20 July 1976.
 
-I made history on July 20, 1976, when I safely touched down on Mars and began sending the first photographs from the planet's surface.
+It was part of a mission with two partners: an orbiter that studied Mars from space, and a lander that became a robot scientist on the surface. Together, they opened a new chapter in exploring the Red Planet.`,
+          },
+          {
+            label: "🔧 Function",
+            text: `Viking 1 was like a tiny laboratory with a view of an entire planet.
 
-🌟 In 2026, we celebrate 50 years since this historic landing!`,
-    },
-    {
-      label: "🔧 Function",
-      text: `I was like a robot scientist with my own mini laboratory! 🔬
+It:
+- Took colour photographs of the Martian landscape.
+- Used a robotic arm to scoop up samples of soil.
+- Tested the soil in a biological laboratory for possible signs of life.
+- Measured weather conditions, including temperature, air pressure and wind speed.
+- Sent photographs and scientific information back to Earth.
 
-📸 Took photographs of the Martian landscape in colour.
+Its orbiter partner had a different job: photograph Mars from above and help scientists study the planet and choose a landing area.`,
+          },
+          {
+            label: "🚀 Launch",
+            text: `Viking 1 began its journey on 20 August 1975, launching from Cape Canaveral, Florida, aboard a Titan IIIE-Centaur rocket.
 
-🦾 Used a robotic arm to scoop up Martian soil.
+After almost 11 months in space, it reached Mars orbit on 19 June 1976. The orbiter photographed the surface, helping scientists choose a safer place for the lander.
 
-🧪 Tested soil samples in a special biological laboratory to search for possible signs of life.
+On 20 July 1976, Viking 1 separated and touched down at Chryse Planitia.
 
-🌡️ Measured the weather, including temperature, air pressure and wind speed.
+A new kind of exploration had begun: a NASA spacecraft was safely on the Martian ground, ready to investigate the planet up close.`,
+          },
+          {
+            label: "🛰️ Mission",
+            text: `Viking 1 had a carefully planned mission.
 
-📡 Sent photographs and scientific information back to Earth.
+1. Launch from Earth on 20 August 1975.
+2. Reach Mars and enter orbit on 19 June 1976.
+3. Use the orbiter's photographs to help select a landing area.
+4. Separate from the orbiter and land safely on 20 July 1976.
+5. Take photographs from the Martian surface.
+6. Use its robotic arm to collect soil samples.
+7. Test the soil in its onboard laboratory.
+8. Send weather reports, photographs and scientific data back to Earth.
 
-My orbiter partner also photographed Mars from space and helped scientists study its surface!`,
-    },
-    {
-      label: "🚀 Launch",
-      text: `I blasted off toward Mars on 20 August 1975! 🚀
+One of its biggest questions was also one of science's biggest mysteries: could anything be living in the soil of Mars?`,
+          },
+          {
+            label: "🕰️ Abandoned",
+            text: `Viking 1 did not stop working after its historic landing. It continued sending photographs, scientific results and weather reports to Earth for years.
 
-🚀 Rocket: Titan IIIE-Centaur
+Its orbiter partner was shut down on 7 August 1980 after running out of attitude-control propellant.
 
-📍 Launch location: Cape Canaveral, Florida, USA
+The lander continued much longer, but on 11 November 1982 it stopped communicating after receiving a faulty command from Earth. NASA tried to contact it again, but the messages never reached it.
 
-🪐 Arrived in Mars orbit: 19 June 1976
+Viking 1 remains at Chryse Planitia, at a site later named Thomas Mutch Memorial Station. Its work may have ended, but its place in Mars exploration is secure.`,
+          },
+          {
+            label: "❄️ Why?",
+            text: `Why was Viking 1 such an important mission?
 
-🛬 Landing date: 20 July 1976
+NASA wanted to study the Martian surface and investigate whether the planet might have supported life. Scientists also wanted to understand whether Mars had once been warmer and wetter.
 
-I travelled through space for almost 11 months before reaching the Red Planet!
+The orbiter mapped and photographed the planet from above. The lander examined the soil, weather and surroundings from the ground.
 
-Before landing, scientists studied photographs from orbit and chose a safer landing area at Chryse Planitia.`,
-    },
-    {
-      label: "🛰️ Mission",
-      text: `My mission was to explore Mars and investigate whether the planet could have supported life.
+Viking 1's experiments produced fascinating results, but they did not provide confirmed evidence of life.
 
-1. 🚀 Launched from Earth on 20 August 1975.
-2. 🪐 Entered orbit around Mars on 19 June 1976.
-3. 📸 The orbiter photographed Mars to help scientists choose a safe landing area.
-4. 🛬 Separated from the orbiter and landed safely on 20 July 1976.
-5. 📷 Took the first photographs from the Martian surface.
-6. 🦾 Collected soil samples using my robotic arm.
-7. 🧪 Tested the soil in my onboard laboratory.
-8. 🌡️ Continued sending weather reports and scientific data to Earth.
-
-🌟 My discoveries helped scientists understand Mars and investigate whether life could ever have existed there!`,
-    },
-    {
-      label: "🕰️ Abandoned",
-      text: `My mission did not end immediately after landing!
-
-I continued working for years and sent photographs, scientific information and weather reports back to Earth.
-
-📅 7 August 1980: My orbiter partner was shut down after running out of attitude-control propellant.
-
-📅 11 November 1982: My lander stopped communicating after receiving a faulty command from Earth.
-
-NASA tried to contact me again, but the messages never reached me.
-
-Today, I remain on Mars at the place where I made history.`,
-    },
-    {
-      label: "❄️ Why?",
-      text: `Why did NASA send Viking 1 to Mars?
-
-🔬 Scientists wanted to investigate the planet's surface and search for possible signs of life.
-
-🌊 They wanted to understand whether Mars had once been warmer and wetter.
-
-📸 The orbiter helped map the planet, while the lander studied the soil, weather and surroundings.
-
-🧪 My experiments produced interesting results, but they did not provide confirmed evidence of life.
-
-✅ Mission accomplished! I helped begin a new chapter of Mars exploration, and missions today continue building on what the Vikings started.`,
-    },
-  ],
+Even without that answer, the mission changed what scientists could learn about Mars. It showed that a spacecraft could land, work as a laboratory and send detailed information home from the surface of another planet.`,
+          }
+        ],
 },
 
       {
@@ -666,43 +747,76 @@ Today, I remain on Mars at the place where I made history.`,
                 tabs: [
           {
             label: "📖 About",
-            text: `Ingenuity was a tiny robot helicopter, the first aircraft ever to fly on another world.
+            text: `Meet Ingenuity, the little helicopter that learned to fly on another world.
 
-It weighed just 1.8 kg on Earth, about as much as a big bottle of water.`,
+Imagine trying to fly a helicopter on Mars. The air is so thin that it would be like trying to fly on Earth at an altitude of around 30 kilometres. A normal helicopter could not do it.
+
+NASA decided to try anyway.
+
+Ingenuity weighed just 1.8 kilograms on Earth — about as much as a large bottle of water. It travelled to Mars attached to the Perseverance rover, carrying a bold question: could powered flight work on another planet?`,
           },
           {
             label: "🔧 Function",
-            text: `🚁 Proved that a helicopter could fly in Mars' super-thin air
-🗺️ Scouted ahead to help the Perseverance rover plan its route
-📸 Took photos from the sky
-✈️ Carried a tiny piece of fabric from the Wright brothers' first airplane`,
+            text: `Ingenuity was not built to carry astronauts or heavy science equipment. Its most important job was to prove that flight was possible in the thin Martian atmosphere.
+
+It was designed to:
+- Test whether a helicopter could fly on Mars.
+- Take photographs from above the surface.
+- Scout areas ahead and help the Perseverance team plan routes.
+- Demonstrate technology that could help future aerial explorers.
+
+It even carried a tiny piece of fabric from the Wright brothers' first airplane — a link between the first powered flight on Earth and the first powered flight on another world.`,
           },
           {
             label: "🚀 Launch",
-            text: `Ingenuity launched on 30 July 2020, tucked under the belly of the Perseverance rover. They landed together in Jezero Crater on 18 February 2021.`,
+            text: `Ingenuity launched from Earth on 30 July 2020, tucked underneath the Perseverance rover.
+
+The two travelled together for months before landing in Jezero Crater on 18 February 2021.
+
+Once Perseverance had found a suitable place, it lowered Ingenuity onto the ground and drove away. The helicopter unfolded, charged its batteries using sunlight and prepared for a flight no aircraft had ever made before.
+
+The test was simple to describe and incredibly difficult to achieve: rise into the Martian sky, stay in control, and land safely.`,
           },
           {
             label: "🛰️ Mission",
-            text: `1. Ride to Mars attached to Perseverance
-2. Drop to the ground and charge up with its solar panel
-3. Make the first flight on 19 April 2021
-4. Keep flying, much more than planned!
+            text: `Ingenuity's first flight was planned as a technology test, not a long exploration mission.
 
-🏆 It was planned for 5 test flights, but it made 72!
-📏 Total distance: 17 km. Highest flight: 24 m up.`,
+1. Travel to Mars attached beneath Perseverance.
+2. Be placed on the ground and charge using its solar panel.
+3. Make the first powered flight on another planet on 19 April 2021.
+4. Continue testing its flying ability and taking aerial images.
+5. Help scout the terrain for Perseverance as the mission continued.
+
+NASA originally planned just five test flights. Ingenuity completed 72.
+
+Across its flights, it travelled about 17 kilometres and reached a maximum height of 24 metres.
+
+A small helicopter had turned a short technology demonstration into an extraordinary flying career.`,
           },
           {
             label: "🕰️ Abandoned",
-            text: `Ingenuity made its final flight on 18 January 2024, and NASA ended the mission on 25 January 2024.
+            text: `Every flight needs a landing — and Ingenuity's final one brought its adventure to a close.
 
-Its team named its final resting spot "Valinor Hills".`,
+Its last flight took place on 18 January 2024. During the landing, its rotor blades were damaged, making further flights impossible.
+
+NASA announced the end of flight operations on 25 January 2024. The team named the helicopter's final resting place Valinor Hills.
+
+Ingenuity remains in Jezero Crater, where it made history. It can no longer fly, but its achievement will help shape how future missions explore other worlds.`,
           },
           {
             label: "❓ Why?",
-            text: `💥 On its last landing, Ingenuity damaged its rotor blades, so it could never fly again.
+            text: `Why did Ingenuity stop flying?
 
-✅ It had already done far more than anyone expected: 72 flights instead of 5!`,
-          },
+During its final landing, Ingenuity damaged its rotor blades. Without blades in working condition, it could not fly again.
+
+But the bigger question is: why send a helicopter to Mars at all?
+
+Mars has an extremely thin atmosphere, making flight a major engineering challenge. Ingenuity was sent to test whether a small aircraft could rise, move and land safely there.
+
+It was expected to make five flights. It completed 72.
+
+Ingenuity did more than prove that a helicopter could fly on another planet. It showed that future explorers might use the sky as well as the ground to discover new places.`,
+          }
         ],
       },
     ],
