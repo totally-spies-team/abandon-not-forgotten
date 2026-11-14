@@ -351,7 +351,57 @@ function DestinationPage({ onChoose }: { onChoose: (world: WorldId) => void }) {
     </main>
   );
 }
+function playLaunchSound() {
+  const context = new window.AudioContext();
+  void context.resume();
 
+  const start = context.currentTime + 0.05;
+
+  const tone = (
+    frequency: number,
+    delay: number,
+    duration = 0.18,
+    volume = 0.1,
+  ) => {
+    const oscillator = context.createOscillator();
+    const gain = context.createGain();
+    const at = start + delay;
+
+    oscillator.type = "sine";
+    oscillator.frequency.setValueAtTime(frequency, at);
+    gain.gain.setValueAtTime(0.0001, at);
+    gain.gain.exponentialRampToValueAtTime(volume, at + 0.015);
+    gain.gain.exponentialRampToValueAtTime(0.0001, at + duration);
+
+    oscillator.connect(gain);
+    gain.connect(context.destination);
+    oscillator.start(at);
+    oscillator.stop(at + duration + 0.02);
+  };
+
+  tone(440, 0);      // T-minus 3
+  tone(523, 0.7);    // T-minus 2
+  tone(659, 1.4);    // T-minus 1
+  tone(880, 3.35, 0.2, 0.06);    // Approaching
+  tone(1174, 3.48, 0.3, 0.06);   // Arrival chime
+
+  const engine = context.createOscillator();
+  const engineGain = context.createGain();
+
+  engine.type = "sawtooth";
+  engine.frequency.setValueAtTime(140, start + 2.1);
+  engine.frequency.exponentialRampToValueAtTime(48, start + 3.2);
+  engineGain.gain.setValueAtTime(0.0001, start + 2.1);
+  engineGain.gain.exponentialRampToValueAtTime(0.035, start + 2.2);
+  engineGain.gain.exponentialRampToValueAtTime(0.0001, start + 3.25);
+
+  engine.connect(engineGain);
+  engineGain.connect(context.destination);
+  engine.start(start + 2.1);
+  engine.stop(start + 3.27);
+
+  window.setTimeout(() => void context.close(), 5000);
+}
 /* ------------------------------------------------------------------
    LAUNCH — countdown animation
 ------------------------------------------------------------------- */
@@ -917,6 +967,7 @@ export default function App() {
   const [selected, setSelected] = useState<Equipment | null>(null);
 
   const chooseWorld = (id: WorldId) => {
+    if (sound) playLaunchSound();
     setWorldId(id);
     setSelected(null);
     setView("launch");
