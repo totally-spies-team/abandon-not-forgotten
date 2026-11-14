@@ -287,6 +287,49 @@ But it wasn't forgotten! In November 1969, the Apollo 12 astronauts landed only 
         voice:
           "I’m Sojourner. In 1997, I became the first little rover to roll across another planet.",
       },
+        tabs: [
+          {
+            label: "📖 About",
+            text: `Sojourner was the first rover to explore the surface of another planet.
+
+It was 30 cm tall, weighed 10.6 kg, and was named after civil-rights activist Sojourner Truth.`,
+          },
+          {
+            label: "🔧 Function",
+            text: `🚗 Drove around the Mars Pathfinder landing site
+🪨 Analyzed the composition of rocks and soil
+📸 Took close-up pictures of the Martian surface
+📡 Sent data to the Pathfinder lander, which relayed it to Earth`,
+          },
+          {
+            label: "🚀 Launch",
+            text: `Sojourner launched inside the Mars Pathfinder spacecraft on 4 December 1996.
+
+Pathfinder landed in Ares Vallis on 4 July 1997.`,
+          },
+          {
+            label: "🛰️ Mission",
+            text: `1. Travel to Mars inside Pathfinder
+2. Land inside giant airbags that bounced across the surface
+3. Roll down the lander's ramp
+4. Explore nearby rocks and soil
+5. Send images and science data back through the lander`,
+          },
+          {
+            label: "🕰️ Abandoned",
+            text: `The Pathfinder mission's final data arrived on 27 September 1997.
+
+Sojourner remains on Mars, likely near the Pathfinder lander in Ares Vallis.`,
+          },
+          {
+            label: "❓ Why?",
+            text: `🧭 Sojourner tested how a small rover could explore another planet.
+
+🔬 Its measurements helped scientists study Martian rocks and soil up close.
+
+✅ Pathfinder returned its final data on 27 September 1997, ending the mission.`,
+          },
+        ],
       {
         id: "spirit",
         name: "Spirit Rover",
