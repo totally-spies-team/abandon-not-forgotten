@@ -58,7 +58,7 @@ export const worlds: Record<WorldId, World> = {
           "The descent stage was left behind on the Moon after the astronauts returned to lunar orbit.",
         now: "It remains at Tranquility Base, in the Sea of Tranquility, where humans first walked on the Moon.",
         voice:
-          "Hi! I'm Eagle. I helped Neil Armstrong and Buzz Aldrin make history in 1969. My job was to get them safely onto the Moon. Once they were ready to go home, I stayed behind!",
+          "I'm Eagle! I carried the first humans to the Moon. My lower half stayed behind, but my upper half took the astronauts home!",
         model: "/models/equipment/apollo-lunar-module.glb",
         
         tabs: [
@@ -66,87 +66,66 @@ export const worlds: Record<WorldId, World> = {
             label: "📖 About",
             text: `Meet Eagle! 🚀
 
-        Eagle was the Lunar Module that carried Neil Armstrong and Buzz Aldrin to the Moon. It became the first crewed spacecraft to land on the lunar surface on 20 July 1969!
+      Before humans could walk on the Moon, NASA needed a special spacecraft to get them there and bring them back.
 
-        It had two parts:
-        🛬 A bottom section with four landing legs and a powerful rocket engine.
-        🚀 A top section where the astronauts lived and controlled the spacecraft.
-
-        Together, these two sections helped make history!`
+      Eagle was the Lunar Module of Apollo 11. It carried two astronauts, Neil Armstrong and Buzz Aldrin, to the Moon. It had two parts: a lower section with landing legs and an upper section where the astronauts lived and worked.`,
           },
           {
             label: "🔧 Function",
-            text: `Eagle had one very important mission: get astronauts safely to the Moon and bring them back to their spacecraft!
-
-        🛬 Landing: Its lower section used rocket engines and four landing legs to touch down safely.
-
-        🏠 Astronaut home: Its upper section gave the astronauts a place to work, rest and control the spacecraft.
-
-        🔬 Science: It carried scientific equipment to study the Moon, including experiments to detect moonquakes and lunar dust.
-
-        🚀 Take-off: Its upper section launched from the Moon to return the astronauts to lunar orbit.`
+            text: `🛬 Landed astronauts safely on the Moon
+      🚀 Carried astronauts back into lunar orbit
+      🏠 Provided a small space for astronauts to live and work
+      🔬 Stored scientific tools and equipment for Moon experiments
+      📡 Communicated with Earth and the Command/Service Module`,
           },
           {
-            label: "📅 Launch Date",
-            text: `16 July 1969 🚀
+            label: "🚀 Launch",
+            text: `Eagle blasted off from Cape Canaveral on 16 July 1969 aboard a powerful Saturn V rocket.
 
-        Apollo 11 launched from Cape Canaveral, Florida, aboard the enormous Saturn V rocket.
+      It reached the Moon as part of Apollo 11 and landed on 20 July 1969 in a place called the Sea of Tranquility.
 
-        After travelling through space, Eagle separated from the command spacecraft and prepared for its most dangerous job: landing on the Moon!
-
-        🌕 20 July 1969: Eagle successfully landed in the Sea of Tranquility.`
+      🌕 It was the first crewed spacecraft to land on the Moon!`,
           },
           {
-            label: "🛰️ Mission Profile",
-            text: `Follow Eagle's incredible journey!
+            label: "🛰️ Mission",
+            text: `1. Travel to the Moon with the Apollo 11 spacecraft 🚀
+      2. Separate from the Command/Service Module
+      3. Fire its engine to slow down and land on the Moon
+      4. Let Armstrong and Aldrin explore the lunar surface
+      5. Collect Moon rocks, take photos and set up scientific experiments
+      6. Fire the upper stage's engine to lift off from the Moon
+      7. Reunite with the Command/Service Module, where Michael Collins was waiting
 
-        1. 🚀 LAUNCH: Apollo 11 blasted off from Earth aboard the Saturn V rocket.
-
-        2. 🌕 SEPARATION: Eagle separated from the command spacecraft while orbiting the Moon.
-
-        3. 🛬 LANDING: Its powerful engine slowed it down until it safely landed in the Sea of Tranquility.
-
-        4. 👨‍🚀 MOONWALK: Neil Armstrong and Buzz Aldrin stepped onto the Moon, collected 21.55 kg of lunar rocks and soil, and took photographs.
-
-        5. 🔬 SCIENCE TIME: The astronauts set up experiments to study moonquakes and lunar dust.
-
-        6. 🚀 RETURN: After 21 hours and 36 minutes on the Moon, Eagle's upper section lifted off and reunited with the command spacecraft.
-
-        Mission accomplished! The astronauts were on their way home.`
+      🌟 The astronauts collected 21.55 kg of Moon rocks and soil during their mission!`,
           },
           {
             label: "🕰️ Abandoned",
-            text: `21 July 1969 🌕
+            text: `Eagle's mission on the Moon ended on 21 July 1969, after the astronauts spent 21 hours and 36 minutes on the lunar surface.
 
-        After spending 21 hours and 36 minutes on the Moon, Eagle's upper section lifted off with Armstrong and Aldrin.
+      🚀 The upper section lifted off to take Armstrong and Aldrin back to the Command/Service Module.
 
-        But its lower section, called the descent stage, stayed behind at the Sea of Tranquility.
+      🛬 The lower section, with its four landing legs, was left behind on the Moon. It had finished its job and was never meant to return to Earth.
 
-        It was left at the same place where humans first walked on the Moon.
-
-        A little piece of history was now resting on the lunar surface!`
+      The upper section was later released into lunar orbit. Its exact fate is unknown, but scientists believe it crashed onto the Moon within 1–4 months.`,
           },
           {
-            label: "❓ Why Abandoned?",
-            text: `Eagle was designed in two sections, and each had a different job.
+            label: "❄️ Why?",
+            text: `Eagle was designed in two parts because landing on the Moon and taking off again needed different equipment.
 
-        🛬 The lower section helped Eagle land and provided a platform for the upper section to launch.
+      🛬 The lower section carried the landing engine, fuel and four landing legs. It also acted as a platform for the upper section to take off.
 
-        🚀 The upper section carried the astronauts back into lunar orbit to meet their command spacecraft.
+      🚀 The upper section carried the astronauts and had its own engine to return them to lunar orbit.
 
-        The lower section was not designed to fly back to Earth, so there was no reason to bring it along.
+      🎯 Leaving the heavy landing section behind meant the astronauts didn't have to carry unnecessary equipment back into space.
 
-        What happened to the upper section? After reuniting with the command spacecraft, it was released into lunar orbit. Scientists believe it crashed onto the Moon sometime within the next 1–4 months, but its exact location is unknown.
-
-        Eagle's job was complete! 🏆`
+      ✅ Mission accomplished! Eagle helped make the first human Moon landing possible.`,
           },
         ],
-
       },
       {
         id: "apollo-15",
         name: "Apollo 15 Lunar Roving Vehicle",
-        shortName: "LRV 1",
+        shortName: "LRV",
         year: "1971",
         lat: 26.132,
         lon: 3.634,
