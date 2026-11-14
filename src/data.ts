@@ -66,59 +66,57 @@ export const worlds: Record<WorldId, World> = {
             label: "📖 About",
             text: `Meet Eagle! 🚀
 
-      Before humans could walk on the Moon, NASA needed a special spacecraft to get them there and bring them back.
+Before humans could walk on the Moon, NASA needed a special spacecraft to get them there and bring them back.
 
-      Eagle was the Lunar Module of Apollo 11. It carried two astronauts, Neil Armstrong and Buzz Aldrin, to the Moon. It had two parts: a lower section with landing legs and an upper section where the astronauts lived and worked.`,
+Eagle was the Lunar Module of Apollo 11. It carried two astronauts, Neil Armstrong and Buzz Aldrin, to the Moon. It had two parts: a lower section with landing legs and an upper section where the astronauts lived and worked.`,
           },
           {
             label: "🔧 Function",
             text: `🛬 Landed astronauts safely on the Moon
-      🚀 Carried astronauts back into lunar orbit
-      🏠 Provided a small space for astronauts to live and work
-      🔬 Stored scientific tools and equipment for Moon experiments
-      📡 Communicated with Earth and the Command/Service Module`,
+🚀 Carried astronauts back into lunar orbit
+🏠 Provided a small space for astronauts to live and work
+🔬 Stored scientific tools and equipment for Moon experiments
+📡 Communicated with Earth and the Command/Service Module`,
           },
           {
             label: "🚀 Launch",
             text: `Eagle blasted off from Cape Canaveral on 16 July 1969 aboard a powerful Saturn V rocket.
 
-      It reached the Moon as part of Apollo 11 and landed on 20 July 1969 in a place called the Sea of Tranquility.
+It reached the Moon as part of Apollo 11 and landed on 20 July 1969 in a place called the Sea of Tranquility.
 
-      🌕 It was the first crewed spacecraft to land on the Moon!`,
+🌕 It was the first crewed spacecraft to land on the Moon!`,
           },
           {
             label: "🛰️ Mission",
             text: `1. Travel to the Moon with the Apollo 11 spacecraft 🚀
-      2. Separate from the Command/Service Module
-      3. Fire its engine to slow down and land on the Moon
-      4. Let Armstrong and Aldrin explore the lunar surface
-      5. Collect Moon rocks, take photos and set up scientific experiments
-      6. Fire the upper stage's engine to lift off from the Moon
-      7. Reunite with the Command/Service Module, where Michael Collins was waiting
+2. Separate from the Command/Service Module
+3. Fire its engine to slow down and land on the Moon
+4. Let Armstrong and Aldrin explore the lunar surface
+5. Collect Moon rocks, take photos and set up scientific experiments
+6. Fire the upper stage's engine to lift off from the Moon
+7. Reunite with the Command/Service Module, where Michael Collins was waiting
 
-      🌟 The astronauts collected 21.55 kg of Moon rocks and soil during their mission!`,
+🌟 The astronauts collected 21.55 kg of Moon rocks and soil during their mission!`,
           },
           {
             label: "🕰️ Abandoned",
             text: `Eagle's mission on the Moon ended on 21 July 1969, after the astronauts spent 21 hours and 36 minutes on the lunar surface.
 
-      🚀 The upper section lifted off to take Armstrong and Aldrin back to the Command/Service Module.
+🚀 The upper section lifted off to take Armstrong and Aldrin back to the Command/Service Module.
 
-      🛬 The lower section, with its four landing legs, was left behind on the Moon. It had finished its job and was never meant to return to Earth.
+🛬 The lower section, with its four landing legs, was left behind on the Moon. It had finished its job and was never meant to return to Earth.
 
-      The upper section was later released into lunar orbit. Its exact fate is unknown, but scientists believe it crashed onto the Moon within 1–4 months.`,
+The upper section was later released into lunar orbit. Its exact fate is unknown, but scientists believe it crashed onto the Moon within 1–4 months.`,
           },
           {
             label: "❄️ Why?",
             text: `Eagle was designed in two parts because landing on the Moon and taking off again needed different equipment.
 
-      🛬 The lower section carried the landing engine, fuel and four landing legs. It also acted as a platform for the upper section to take off.
+🛬 The lower section carried the landing engine, fuel and four landing legs. It also acted as a platform for the upper section to take off.
+🚀 The upper section carried the astronauts and had its own engine to return them to lunar orbit.
+🎯 Leaving the heavy landing section behind meant the astronauts didn't have to carry unnecessary equipment back into space.
 
-      🚀 The upper section carried the astronauts and had its own engine to return them to lunar orbit.
-
-      🎯 Leaving the heavy landing section behind meant the astronauts didn't have to carry unnecessary equipment back into space.
-
-      ✅ Mission accomplished! Eagle helped make the first human Moon landing possible.`,
+✅ Mission accomplished! Eagle helped make the first human Moon landing possible.`,
           },
         ],
       },
@@ -297,28 +295,165 @@ But it wasn't forgotten! In November 1969, the Apollo 12 astronauts landed only 
         lat: -14.568,
         lon: 175.472,
         type: "rover",
-        did: "Explored Gusev Crater for more than six years and found signs of ancient water.",
-        ended: "It became stuck in soft soil; its last communication came on March 22, 2010.",
-        now: "Spirit rests at Troy on the western side of Home Plate.",
+        did: "A robot geologist sent to explore Mars and search for clues that water once existed there.",
+        ended: "Spirit's mission came to an end in 2010, after exploring Mars for more than six years.",
+        now: "Still on Mars at Gusev Crater, where it landed in January 2004.",
         voice: "I’m Spirit. I was built for 90 days, but I explored Mars for more than six years.",
         // Spirit and Opportunity were identical twins, so they share NASA's MER model
         model: "/models/equipment/opportunity.glb",
-      },
-      {
-        id: "opportunity",
-        name: "Opportunity Rover",
-        shortName: "Opportunity",
-        year: "2004",
-        lat: -2.046,
-        lon: -5.526,
-        type: "rover",
-        did: "Traveled more than 45 km and revealed a long history of water on Mars.",
-        ended: "A global dust storm silenced it in June 2018 after nearly 15 years.",
-        now: "It rests in Perseverance Valley on the rim of Endeavour Crater.",
-        voice:
-          "I’m Opportunity. I crossed Mars for almost 15 years, one careful wheel turn at a time.",
-        model: "/models/equipment/opportunity.glb",
-      },
+      tabs: [
+    {
+      label: "📖 About",
+      text: `Meet Spirit! 🔴
+
+What if Mars was once covered with water? NASA wanted to find out, so it sent two robot explorers to investigate the Red Planet.
+
+Spirit was one of these twin rovers. It landed inside Gusev Crater, a giant crater that scientists thought might once have held a lake.
+
+Spirit became a robot geologist, exploring rocks and soil to uncover clues about Mars's watery past.`,
+    },
+    {
+      label: "🔧 Function",
+      text: `📸 Took panoramic pictures of the Martian landscape
+🪨 Studied rocks and soil to discover what they were made of
+🔬 Used scientific instruments to investigate minerals
+🦾 Used a robotic arm to examine interesting rocks up close
+🗺️ Explored the surface and searched for signs of ancient water`,
+    },
+    {
+      label: "🚀 Launch",
+      text: `Spirit arrived on Mars on 3 January 2004.
+
+It landed inside Gusev Crater, a huge impact crater that scientists believed might once have been a lake.
+
+Spirit was one of two identical Mars Exploration Rovers sent to different parts of the planet. Its twin, Opportunity, landed a few weeks later on the other side of Mars.`,
+    },
+    {
+      label: "🛰️ Mission",
+      text: `Spirit's mission was to investigate Mars and search for evidence that liquid water had once existed there.
+
+1. Travel through space to Mars 🚀
+2. Land safely inside Gusev Crater
+3. Take pictures of the surrounding landscape 📸
+4. Drive across the surface to explore rocks and soil
+5. Use scientific tools to study the rocks
+6. Send pictures and discoveries back to Earth 📡
+
+🌟 Spirit travelled about 7.7 km across Mars and helped scientists discover evidence that water had existed there long ago!`,
+    },
+    {
+      label: "🕰️ Abandoned",
+      text: `Spirit's mission officially ended in 2010.
+
+It was originally designed for a mission lasting only 90 Martian days. But it kept exploring for more than six years!
+
+After years of travelling and investigating the Red Planet, Spirit finally stopped operating.
+
+Even though it could no longer send messages, its discoveries continued helping scientists understand Mars.`,
+    },
+    {
+      label: "❄️ Why?",
+      text: `Why did NASA send Spirit all the way to Mars?
+
+Scientists wanted to know whether Mars was once warm and wet enough to support life.
+
+🌊 Gusev Crater looked like it might have been an ancient lake, making it a perfect place to investigate.
+
+🔬 By studying rocks and soil, Spirit found evidence that water had played a role in Mars's history.
+
+🎯 Spirit wasn't designed to return to Earth. Its job was to explore, investigate and send its discoveries home.
+
+✅ Mission accomplished! It helped show that Mars had a much wetter past than the dry, dusty planet we see today.`,
+    },
+  ],
+},
+{
+  id: "opportunity",
+  name: "Opportunity",
+  shortName: "Opportunity",
+  year: "2004",
+  lat: -1.9462,
+  lon: 354.4734,
+  type: "rover",
+  did: "A robot geologist sent to explore Mars and find evidence that water once flowed across its surface.",
+  ended: "Opportunity sent its last communication to Earth on 10 June 2018, during a huge planet-wide dust storm.",
+  now: "Still on Mars at Meridiani Planum, where it landed in January 2004.",
+  voice:
+    "I'm Opportunity! I was built to explore for 90 days, but I kept rolling for almost 15 years and travelled over 45 kilometres!",
+  tabs: [
+    {
+      label: "📖 About",
+      text: `Meet Opportunity! 🔴
+
+Imagine being sent to Mars for just 90 days but continuing your adventure for almost 15 years!
+
+Opportunity was one of NASA's twin Mars Exploration Rovers. Its job was to investigate rocks and soil for clues that water once existed on the Red Planet.
+
+It landed at Meridiani Planum, a place with minerals that suggested Mars had a wet history.`,
+    },
+    {
+      label: "🔧 Function",
+      text: `📸 Captured thousands of pictures of the Martian landscape
+🪨 Examined rocks and soil for clues about ancient water
+🔬 Studied minerals to understand Mars's history
+🦾 Used a robotic arm to investigate rocks up close
+🗺️ Travelled across Mars to explore different locations`,
+    },
+    {
+      label: "🚀 Launch",
+      text: `Opportunity landed on Mars on 24 January 2004 (Pacific time).
+
+Its landing site was Meridiani Planum, a flat region with deposits of a mineral called hematite.
+
+Why was that exciting? 🤔 Hematite can form in environments where water is present, making this a great place to search for clues about Mars's past.
+
+Opportunity was Spirit's twin rover, but each robot explored a different part of Mars.`,
+    },
+    {
+      label: "🛰️ Mission",
+      text: `Opportunity's mission was to search for signs that liquid water had once existed on Mars.
+
+1. Travel through space to the Red Planet 🚀
+2. Land safely at Meridiani Planum
+3. Take pictures of rocks and the surrounding landscape 📸
+4. Drive across Mars to investigate interesting locations
+5. Examine rocks and minerals using scientific instruments
+6. Send its discoveries back to Earth 📡
+
+🌟 Opportunity travelled an incredible 45.16 km across Mars!
+
+It found evidence that water had been present on the planet long ago.`,
+    },
+    {
+      label: "🕰️ Abandoned",
+      text: `Opportunity sent its last message to Earth on 10 June 2018.
+
+What happened? A huge dust storm spread across Mars and covered the area where Opportunity was exploring.
+
+The rover depended on solar panels for power. With so much dust blocking sunlight, it could no longer generate enough electricity to keep communicating.
+
+NASA tried to contact Opportunity again, but no more messages arrived.
+
+After almost 15 years of exploration, its mission came to an end.`,
+    },
+    {
+      label: "❄️ Why?",
+      text: `Why did Opportunity stop working?
+
+🌪️ A massive dust storm covered the Martian sky and blocked sunlight from reaching its solar panels.
+
+🔋 Without enough sunlight, Opportunity could not generate the power it needed to operate and communicate with Earth.
+
+But why was it exploring Mars in the first place?
+
+Scientists wanted to discover whether water had once existed on the planet. Opportunity found evidence that ancient Mars had a wetter environment.
+
+🎯 It was originally designed to work for just 90 days, but it explored for almost 15 years!
+
+✅ Mission accomplished! Opportunity travelled much farther than expected and helped change what we know about Mars.`,
+    },
+  ],
+},
       {
         id: "viking-1",
         name: "Viking 1 Lander",
