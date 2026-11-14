@@ -954,12 +954,12 @@ button {
   cursor: url("/walle-cursor.png") 12 12, auto !important;
 }
 
-/* Clickable elements: EVE */
+/* Clickable elements: EV */
 button,
 a,
 .marker,
 .world-choice {
-  cursor: url("/eve-clickable.png") 12 12, pointer !important;
+  cursor: url("/ev-clickable.png") 12 12, pointer !important;
 }
 /* ---------- Story card tabs ---------- */
 .story-tabs {
