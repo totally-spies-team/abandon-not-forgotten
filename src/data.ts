@@ -368,6 +368,47 @@ But it wasn't forgotten! In November 1969, the Apollo 12 astronauts landed only 
         now: "It stands in Jezero Crater at its final airfield, named Valinor Hills.",
         voice: "I’m Ingenuity. I proved that a tiny helicopter could fly in the thin air of Mars.",
         model: "/models/equipment/ingenuity.glb",
+                tabs: [
+          {
+            label: "📖 About",
+            text: `Ingenuity was a tiny robot helicopter, the first aircraft ever to fly on another world.
+
+It weighed just 1.8 kg on Earth, about as much as a big bottle of water.`,
+          },
+          {
+            label: "🔧 Function",
+            text: `🚁 Proved that a helicopter could fly in Mars' super-thin air
+🗺️ Scouted ahead to help the Perseverance rover plan its route
+📸 Took photos from the sky
+✈️ Carried a tiny piece of fabric from the Wright brothers' first airplane`,
+          },
+          {
+            label: "🚀 Launch",
+            text: `Ingenuity launched on 30 July 2020, tucked under the belly of the Perseverance rover. They landed together in Jezero Crater on 18 February 2021.`,
+          },
+          {
+            label: "🛰️ Mission",
+            text: `1. Ride to Mars attached to Perseverance
+2. Drop to the ground and charge up with its solar panel
+3. Make the first flight on 19 April 2021
+4. Keep flying, much more than planned!
+
+🏆 It was planned for 5 test flights, but it made 72!
+📏 Total distance: 17 km. Highest flight: 24 m up.`,
+          },
+          {
+            label: "🕰️ Abandoned",
+            text: `Ingenuity made its final flight on 18 January 2024, and NASA ended the mission on 25 January 2024.
+
+Its team named its final resting spot "Valinor Hills".`,
+          },
+          {
+            label: "❓ Why?",
+            text: `💥 On its last landing, Ingenuity damaged its rotor blades, so it could never fly again.
+
+✅ It had already done far more than anyone expected: 72 flights instead of 5!`,
+          },
+        ],
       },
     ],
   },
