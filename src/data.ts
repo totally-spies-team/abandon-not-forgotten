@@ -7,7 +7,7 @@ export type Equipment = {
   year: string;
   lat: number;
   lon: number;
-  type: "lander" | "rover" | "helicopter" | "experiment";
+  type: "lander" | "rover" | "helicopter";
   did: string;
   ended: string;
   now: string;
@@ -53,95 +53,13 @@ export const worlds: Record<WorldId, World> = {
         lat: 0.674,
         lon: 23.473,
         type: "lander",
-        did: "The spacecraft that carried the first humans to land on the Moon!",
+        did: "Carried Neil Armstrong and Buzz Aldrin safely to the Sea of Tranquility.",
         ended:
-          "The descent stage was left behind on the Moon after the astronauts returned to lunar orbit.",
-        now: "It remains at Tranquility Base, in the Sea of Tranquility, where humans first walked on the Moon.",
+          "Its upper ascent stage lifted the crew back to orbit, leaving the descent stage behind.",
+        now: "It remains at Tranquility Base, surrounded by experiments, tools, and the astronauts’ footprints.",
         voice:
-          "Hi! I'm Eagle. I helped Neil Armstrong and Buzz Aldrin make history in 1969. My job was to get them safely onto the Moon. Once they were ready to go home, I stayed behind!",
+          "Hi, I’m Eagle’s descent stage. I landed here in 1969, and I’m still keeping watch at Tranquility Base.",
         model: "/models/equipment/apollo-lunar-module.glb",
-        
-        tabs: [
-          {
-            label: "📖 About",
-            text: `Meet Eagle! 🚀
-
-        Eagle was the Lunar Module that carried Neil Armstrong and Buzz Aldrin to the Moon. It became the first crewed spacecraft to land on the lunar surface on 20 July 1969!
-
-        It had two parts:
-        🛬 A bottom section with four landing legs and a powerful rocket engine.
-        🚀 A top section where the astronauts lived and controlled the spacecraft.
-
-        Together, these two sections helped make history!`
-          },
-          {
-            label: "🔧 Function",
-            text: `Eagle had one very important mission: get astronauts safely to the Moon and bring them back to their spacecraft!
-
-        🛬 Landing: Its lower section used rocket engines and four landing legs to touch down safely.
-
-        🏠 Astronaut home: Its upper section gave the astronauts a place to work, rest and control the spacecraft.
-
-        🔬 Science: It carried scientific equipment to study the Moon, including experiments to detect moonquakes and lunar dust.
-
-        🚀 Take-off: Its upper section launched from the Moon to return the astronauts to lunar orbit.`
-          },
-          {
-            label: "📅 Launch Date",
-            text: `16 July 1969 🚀
-
-        Apollo 11 launched from Cape Canaveral, Florida, aboard the enormous Saturn V rocket.
-
-        After travelling through space, Eagle separated from the command spacecraft and prepared for its most dangerous job: landing on the Moon!
-
-        🌕 20 July 1969: Eagle successfully landed in the Sea of Tranquility.`
-          },
-          {
-            label: "🛰️ Mission Profile",
-            text: `Follow Eagle's incredible journey!
-
-        1. 🚀 LAUNCH: Apollo 11 blasted off from Earth aboard the Saturn V rocket.
-
-        2. 🌕 SEPARATION: Eagle separated from the command spacecraft while orbiting the Moon.
-
-        3. 🛬 LANDING: Its powerful engine slowed it down until it safely landed in the Sea of Tranquility.
-
-        4. 👨‍🚀 MOONWALK: Neil Armstrong and Buzz Aldrin stepped onto the Moon, collected 21.55 kg of lunar rocks and soil, and took photographs.
-
-        5. 🔬 SCIENCE TIME: The astronauts set up experiments to study moonquakes and lunar dust.
-
-        6. 🚀 RETURN: After 21 hours and 36 minutes on the Moon, Eagle's upper section lifted off and reunited with the command spacecraft.
-
-        Mission accomplished! The astronauts were on their way home.`
-          },
-          {
-            label: "🕰️ Abandoned",
-            text: `21 July 1969 🌕
-
-        After spending 21 hours and 36 minutes on the Moon, Eagle's upper section lifted off with Armstrong and Aldrin.
-
-        But its lower section, called the descent stage, stayed behind at the Sea of Tranquility.
-
-        It was left at the same place where humans first walked on the Moon.
-
-        A little piece of history was now resting on the lunar surface!`
-          },
-          {
-            label: "❓ Why Abandoned?",
-            text: `Eagle was designed in two sections, and each had a different job.
-
-        🛬 The lower section helped Eagle land and provided a platform for the upper section to launch.
-
-        🚀 The upper section carried the astronauts back into lunar orbit to meet their command spacecraft.
-
-        The lower section was not designed to fly back to Earth, so there was no reason to bring it along.
-
-        What happened to the upper section? After reuniting with the command spacecraft, it was released into lunar orbit. Scientists believe it crashed onto the Moon sometime within the next 1–4 months, but its exact location is unknown.
-
-        Eagle's job was complete! 🏆`
-          },
-        ],
-
       },
       {
         id: "apollo-15",
@@ -192,6 +110,7 @@ The rover travelled to the Moon inside the lunar module Falcon. Falcon landed on
 
 The three moonwalks together lasted 18 hours and 35 minutes.`,
           },
+    
           {
             label: "🕰️ Abandoned",
             text: `The rover was left on the Moon on 2 August 1971, after the astronauts finished their third and final moonwalk.
@@ -211,18 +130,18 @@ Mission accomplished! The rover helped Apollo 15 explore much more of the Moon t
         ],
       },
       {
-        id: "alsep",
-        name: "Apollo Lunar Surface Experiments Package",
-        shortName: "ALSEP",
-        year: "1969",
-        lat: -8.0098,
-        lon: -30.4249,
-        type: "experiment",
-        did: "Carried scientific instruments that studied moonquakes, the lunar environment, and the Moon's interior after the astronauts departed.",
-        ended: "NASA switched off the Apollo lunar surface experiments on September 30, 1977, ending their scientific operations.",
-        now: "The scientific instruments remain at their Apollo landing sites as historical equipment on the Moon.",
+        id: "apollo-17",
+        name: "Apollo 17 Lunar Roving Vehicle",
+        shortName: "LRV 3",
+        year: "1972",
+        lat: 20.191,
+        lon: 30.772,
+        type: "rover",
+        did: "Carried the last Apollo moonwalkers on three record-setting expeditions.",
+        ended: "It stopped after 35.7 km, the longest drive of any Apollo rover.",
+        now: "Parked in the Taurus–Littrow valley, close to the Challenger descent stage.",
         voice:
-          "I'm ALSEP. The astronauts left me behind so I could continue studying the Moon after they returned to Earth.",
+          "I’m the last Apollo rover. I explored Taurus–Littrow, then watched the last humans leave the Moon.",
       },
             {
         id: "surveyor-3",
@@ -340,20 +259,110 @@ But it wasn't forgotten! In November 1969, the Apollo 12 astronauts landed only 
           "I’m Opportunity. I crossed Mars for almost 15 years, one careful wheel turn at a time.",
         model: "/models/equipment/opportunity.glb",
       },
-      {
-        id: "viking-1",
-        name: "Viking 1 Lander",
-        shortName: "Viking 1",
-        year: "1976",
-        lat: 22.697,
-        lon: -48.222,
-        type: "lander",
-        did: "Sent the first successful photographs and long-term weather reports from the Martian surface.",
-        ended: "A mistaken command shut down communication in November 1982.",
-        now: "It remains in Chryse Planitia at a site named the Thomas Mutch Memorial Station.",
-        voice: "I’m Viking 1. In 1976, I showed Earth the surface of Mars in color.",
-        model: "/models/equipment/viking-lander.glb",
-      },
+      
+{
+  id: "viking-1",
+  name: "Viking 1 Lander",
+  shortName: "Viking 1",
+  year: "1975",
+  lat: 22.483,
+  lon: -47.94,
+  type: "lander",
+  did: "Made the first successful NASA landing on Mars and sent back the first images from its surface.",
+  ended:
+    "Stopped communicating with Earth on November 11, 1982, after receiving a faulty command.",
+  now:
+    "It remains on Mars at Chryse Planitia, at a landing site named Thomas Mutch Memorial Station.",
+  voice:
+    "Hi, I'm Viking 1! I landed on Mars in 1976 and sent Earth its first pictures from the Martian surface. I even searched the red soil for signs of life!",
+  model: "/models/equipment/viking-lander.glb",
+  tabs: [
+    {
+      label: "📖 About",
+      text: `Imagine being the first NASA robot to successfully land on Mars! That's me, Viking 1! 🔴
+
+I was part of NASA's Viking mission, which included an orbiter flying around Mars and a lander exploring its surface.
+
+I made history on July 20, 1976, when I safely landed on Mars and sent back the first images from its surface.
+
+My job was to help scientists understand Mars and discover whether it could have supported life.`
+    },
+    {
+      label: "🔧 Function",
+      text: `I was like a robot scientist with a mini laboratory! 🔬
+
+📸 Took photographs of the Martian landscape using my cameras.
+
+🦾 Used a robotic arm to scoop up Martian soil.
+
+🧪 Tested soil samples in a special biological laboratory to look for possible signs of life.
+
+🌡️ Measured the weather, including temperature, air pressure and wind speed.
+
+🌍 Sent pictures and scientific information back to Earth so scientists could study Mars.`
+    },
+    {
+      label: "🚀 Launch",
+      text: `I blasted off toward Mars on 20 August 1975! 🚀
+
+🚀 Rocket: Titan IIIE-Centaur
+
+📍 Launch location: Cape Canaveral, Florida, USA
+
+🪐 Arrived in Mars orbit: 19 June 1976
+
+🛬 Landing date: 20 July 1976
+
+I travelled through space for almost 11 months before finally reaching the Red Planet!`
+    },
+    {
+      label: "🛰️ Mission",
+      text: `My mission was a huge adventure!
+
+1. 🚀 Launched from Earth on 20 August 1975.
+2. 🪐 Entered orbit around Mars on 19 June 1976.
+3. 📸 Scientists studied my photographs from orbit and selected a safer landing area.
+4. 🛬 Landed safely on Chryse Planitia on 20 July 1976.
+5. 📷 Took the first photographs of the Martian surface.
+6. 🦾 On 28 July 1976, my robotic arm collected my first soil samples.
+7. 🧪 Tested the soil to search for possible signs of life.
+8. 🌡️ Continued sending weather reports and scientific information to Earth.
+
+Fun fact! My cameras even captured a 300-degree panorama of the surrounding Martian landscape!`
+    },
+    {
+      label: "🕰️ Abandoned",
+      text: `My mission officially began in 1976, but I continued working for much longer!
+
+📅 20 July 1976: I landed safely on Mars.
+
+📅 November 1976: My primary mission ended, but I continued operating during extended missions.
+
+📅 January 1982: My landing site was renamed Thomas Mutch Memorial Station.
+
+📅 11 November 1982: My last communication with Earth took place.
+
+After more than six years on Mars, I finally went silent.`
+    },
+    {
+      label: "❓ Why?",
+      text: `So, why did I stop working? 🤔
+
+📡 On 11 November 1982, I received a faulty command sent from Earth. This caused communication with me to stop.
+
+🔧 Scientists tried several times to contact me again, but none of their attempts worked.
+
+🌌 I could no longer send pictures, weather reports or scientific information back to Earth.
+
+Even though I stopped communicating, my work was not wasted!
+
+🏆 I helped scientists learn more about Mars, its soil, weather and environment. My discoveries also helped prepare the way for future Mars missions.
+
+My adventure ended, but the exploration of Mars continued!`
+    }
+  ]
+},
+
       {
         id: "ingenuity",
         name: "Ingenuity Mars Helicopter",
@@ -368,47 +377,6 @@ But it wasn't forgotten! In November 1969, the Apollo 12 astronauts landed only 
         now: "It stands in Jezero Crater at its final airfield, named Valinor Hills.",
         voice: "I’m Ingenuity. I proved that a tiny helicopter could fly in the thin air of Mars.",
         model: "/models/equipment/ingenuity.glb",
-                tabs: [
-          {
-            label: "📖 About",
-            text: `Ingenuity was a tiny robot helicopter, the first aircraft ever to fly on another world.
-
-It weighed just 1.8 kg on Earth, about as much as a big bottle of water.`,
-          },
-          {
-            label: "🔧 Function",
-            text: `🚁 Proved that a helicopter could fly in Mars' super-thin air
-🗺️ Scouted ahead to help the Perseverance rover plan its route
-📸 Took photos from the sky
-✈️ Carried a tiny piece of fabric from the Wright brothers' first airplane`,
-          },
-          {
-            label: "🚀 Launch",
-            text: `Ingenuity launched on 30 July 2020, tucked under the belly of the Perseverance rover. They landed together in Jezero Crater on 18 February 2021.`,
-          },
-          {
-            label: "🛰️ Mission",
-            text: `1. Ride to Mars attached to Perseverance
-2. Drop to the ground and charge up with its solar panel
-3. Make the first flight on 19 April 2021
-4. Keep flying, much more than planned!
-
-🏆 It was planned for 5 test flights, but it made 72!
-📏 Total distance: 17 km. Highest flight: 24 m up.`,
-          },
-          {
-            label: "🕰️ Abandoned",
-            text: `Ingenuity made its final flight on 18 January 2024, and NASA ended the mission on 25 January 2024.
-
-Its team named its final resting spot "Valinor Hills".`,
-          },
-          {
-            label: "❓ Why?",
-            text: `💥 On its last landing, Ingenuity damaged its rotor blades, so it could never fly again.
-
-✅ It had already done far more than anyone expected: 72 flights instead of 5!`,
-          },
-        ],
       },
     ],
   },
@@ -451,8 +419,4 @@ export const sources = [
     label: "NASA/JPL Ingenuity Mars Helicopter",
     url: "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/",
   },
-  {
-  label: "NASA NSSDC — Apollo 12 ALSEP",
-  url: "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-099C",
-},
 ];
