@@ -7,7 +7,7 @@ export type Equipment = {
   year: string;
   lat: number;
   lon: number;
-  type: "lander" | "rover" | "helicopter" | "experiment";
+  type: "lander" | "rover" | "helicopter" | "experiment" | "surveyor";
   did: string;
   ended: string;
   now: string;
@@ -208,7 +208,7 @@ Mission accomplished! The rover helped Apollo 15 explore much more of the Moon t
         year: "1967",
         lat: -3.0,
         lon: -23.41,
-        type: "lander",
+        type: "surveyor",
         did: "A robot scout sent to check the Moon was safe for astronauts to land on.",
         ended: "It went silent on 4 May 1967, when the freezing lunar night arrived.",
         now: "Still standing in the Ocean of Storms, 180 m from the Apollo 12 landing site.",
