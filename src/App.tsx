@@ -720,12 +720,13 @@ function Typewriter({ text, speed = 14 }: { text: string; speed?: number }) {
 function StoryTabs({
   tabs,
   soundEnabled,
+  audioRef,
 }: {
   tabs: { label: string; text: string; audio?: string }[];
   soundEnabled: boolean;
+  audioRef: React.MutableRefObject<HTMLAudioElement | null>;
 }) {
   const [active, setActive] = useState(0);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Automatically play the About audio when equipment is opened
   useEffect(() => {
@@ -818,10 +819,12 @@ function StoryCard({
   item,
   onBack,
   soundEnabled,
+  audioRef,
 }: {
   item: Equipment;
   onBack: () => void;
   soundEnabled: boolean;
+  audioRef: React.MutableRefObject<HTMLAudioElement | null>;
 }) {
   return (
     <aside className="story-card">
@@ -865,7 +868,7 @@ function StoryCard({
         <h2>{item.name}</h2>
         <p className="card-intro">{item.did}</p>
                 {item.tabs ? (
-          <StoryTabs key={item.id} tabs={item.tabs} soundEnabled={soundEnabled} />
+          <StoryTabs key={item.id} tabs={item.tabs} soundEnabled={soundEnabled} audioRef={audioRef} />
         ) : (
           <dl>
             <div>
@@ -903,6 +906,17 @@ function SurfacePage({
   const [arrived, setArrived] = useState<Equipment | null>(null);
   const lastSpoken = useRef("");
   const labelLayer = useRef<HTMLDivElement>(null);
+  // Shared narration player so hovering over a marker can stop the story audio.
+  const storyAudioRef = useRef<HTMLAudioElement | null>(null);
+
+  const handleEquipmentHover = (item: Equipment | null) => {
+    if (item && storyAudioRef.current) {
+      storyAudioRef.current.pause();
+      storyAudioRef.current.currentTime = 0;
+      storyAudioRef.current = null;
+    }
+    setHovered(item);
+  };
 
   /* ---------- Collect them all ---------- */
   // Which machines this visitor has opened. Saved in the browser, so it survives a refresh.
@@ -985,7 +999,7 @@ function SurfacePage({
             visited={visited}
             labelLayer={labelLayer}
             onSelect={onSelected}
-            onHover={setHovered}
+            onHover={handleEquipmentHover}
           />
         </Suspense>
         <div ref={labelLayer} className="label-layer" />
@@ -1028,6 +1042,7 @@ function SurfacePage({
           item={arrived}
           onBack={() => onSelected(null)}
           soundEnabled={soundEnabled}
+          audioRef={storyAudioRef}
         />
       )}
       <Visor />
