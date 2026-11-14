@@ -133,6 +133,7 @@ The upper section was later released into lunar orbit. Its exact fate is unknown
         now: "It remains parked near the Apollo 15 landing site in the Hadley–Apennine region.",
         voice:
           "Hi, I’m the Apollo 15 lunar rover! In 1971, I helped astronauts explore the Moon by driving almost 28 km across its rocky surface.",
+        model: "/models/equipment/lrv.glb",
         tabs: [
           {
             label: "📖 About",
@@ -293,6 +294,7 @@ But it wasn't forgotten! In November 1969, the Apollo 12 astronauts landed only 
             text: `Sojourner was the first rover to explore the surface of another planet.
 
 It was 30 cm tall, weighed 10.6 kg, and was named after civil-rights activist Sojourner Truth.`,
+
           },
           {
             label: "🔧 Function",
@@ -328,9 +330,8 @@ Sojourner remains on Mars, likely near the Pathfinder lander in Ares Vallis.`,
 🔬 Its measurements helped scientists study Martian rocks and soil up close.
 
 ✅ Pathfinder returned its final data on 27 September 1997, ending the mission.`,
-          },
         ],
-      },
+        },
       {
         id: "spirit",
         name: "Spirit Rover",
