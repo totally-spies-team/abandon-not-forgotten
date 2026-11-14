@@ -716,6 +716,7 @@ function Typewriter({ text, speed = 14 }: { text: string; speed?: number }) {
 }
 
 /* Clickable story tabs with optional pre-recorded narration */
+
 function StoryTabs({
   tabs,
   soundEnabled,
@@ -726,13 +727,40 @@ function StoryTabs({
   const [active, setActive] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  // Automatically play the About audio when equipment is opened
+  useEffect(() => {
+    if (!soundEnabled) return;
+
+    const audioPath = tabs[0]?.audio;
+    if (!audioPath) return;
+
+    const player = new Audio(audioPath);
+    audioRef.current = player;
+
+    void player.play().catch((error) => {
+      console.error("Could not play About narration:", error);
+    });
+
+    return () => {
+      player.pause();
+      player.currentTime = 0;
+
+      if (audioRef.current === player) {
+        audioRef.current = null;
+      }
+    };
+  }, [tabs, soundEnabled]);
+
+  // Stop audio when sound is turned off
   useEffect(() => {
     if (!soundEnabled && audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
+      audioRef.current = null;
     }
   }, [soundEnabled]);
 
+  // Stop audio when the component is removed
   useEffect(() => {
     return () => {
       audioRef.current?.pause();
@@ -756,6 +784,7 @@ function StoryTabs({
 
     const player = new Audio(audioPath);
     audioRef.current = player;
+
     void player.play().catch((error) => {
       console.error("Could not play story narration:", error);
     });
@@ -776,12 +805,14 @@ function StoryTabs({
           </button>
         ))}
       </div>
+
       <p className="tab-panel" role="tabpanel">
         <Typewriter key={active} text={tabs[active].text} />
       </p>
     </div>
   );
 }
+
 
 function StoryCard({
   item,
