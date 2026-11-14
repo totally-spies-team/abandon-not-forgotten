@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abandoned, Not Forgotten</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23ee7b42' stroke-width='2'/%3E%3Cpath d='M3 26 29 6' stroke='%23ee7b42' stroke-width='2'/%3E%3C/svg%3E" />
+
+    <!-- NASA model-viewer files (the ones from NASA's 3D embed page).
+         They power the spinning 3D equipment models in the story card. -->
+    <script>
+      // NASA's models are Draco-compressed. Use the decoder bundled in /public/draco
+      // so the 3D models also work offline (default would download it from Google).
+      self.ModelViewerElement = self.ModelViewerElement || {};
+      self.ModelViewerElement.dracoDecoderLocation = "/draco/";
+    </script>
+    <script src="/nasa-model-viewer/fullscreen.polyfill.js"></script>
+    <script src="/nasa-model-viewer/intersection-observer.js"></script>
+    <script src="/nasa-model-viewer/ResizeObserver.js"></script>
+    <script src="/nasa-model-viewer/webcomponents-bundle.js"></script>
+    <script type="module" src="/nasa-model-viewer/model-viewer.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,951 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap");
+@import "tailwindcss";
+
+:root {
+  --ink: #f2efe7;
+  --muted: #9d9b94;
+  --orange: #ee7b42;
+  --orange-bright: #ff985c;
+  --space: #050709;
+  --line: rgba(255, 255, 255, 0.15);
+  color: var(--ink);
+  background: var(--space);
+  font-family: "Manrope", sans-serif;
+  font-synthesis: none;
+}
+
+@layer base {
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+    overflow: hidden;
+    background: var(--space);
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid var(--orange-bright);
+    outline-offset: 4px;
+  }
+}
+
+#root,
+.app-shell {
+  min-height: 100vh;
+}
+button {
+  cursor: pointer;
+}
+
+.destination-page,
+.launch-page,
+.surface-page {
+  position: relative;
+  height: 100svh;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 40%, #151719 0, #080a0c 42%, #030405 100%);
+}
+
+.starfield,
+.stars,
+.star-streaks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.stars {
+  background-repeat: repeat;
+}
+.stars-a {
+  opacity: 0.7;
+  background-image: radial-gradient(circle, #fff 0 1px, transparent 1.3px);
+  background-size: 83px 83px;
+  animation: starDrift 55s linear infinite;
+}
+.stars-b {
+  opacity: 0.35;
+  background-image: radial-gradient(circle, #fff 0 0.7px, transparent 1px);
+  background-size: 47px 47px;
+  background-position: 14px 22px;
+  animation: starDrift 90s linear infinite reverse;
+}
+.stars-c {
+  opacity: 0.2;
+  background-image: radial-gradient(circle, #ffddc6 0 1px, transparent 1.5px);
+  background-size: 157px 157px;
+  background-position: 50px 80px;
+}
+@keyframes starDrift {
+  to {
+    transform: translate3d(-83px, 42px, 0);
+  }
+}
+
+.top-nav {
+  position: fixed;
+  z-index: 80;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4.5vw;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(to bottom, rgba(3, 4, 5, 0.8), transparent);
+}
+.brand {
+  color: #f7f3ea;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  font:
+    500 10px/1.25 "DM Mono",
+    monospace;
+  letter-spacing: 0.18em;
+}
+.brand b {
+  color: var(--orange);
+  font-weight: 500;
+}
+.brand-mark {
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--orange);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.brand-mark::before {
+  content: "";
+  width: 35px;
+  height: 1px;
+  background: var(--orange);
+  transform: rotate(-35deg);
+}
+.brand-mark span {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: white;
+}
+.top-nav nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.top-nav nav button {
+  color: rgba(255, 255, 255, 0.68);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font:
+    400 11px "DM Mono",
+    monospace;
+  letter-spacing: 0.08em;
+  transition: color 0.2s;
+}
+.top-nav nav button:hover {
+  color: white;
+}
+.mobile-menu {
+  display: none;
+  color: white;
+}
+
+.destination-intro {
+  position: absolute;
+  z-index: 4;
+  top: 14%;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+.kicker {
+  color: var(--orange);
+  font:
+    500 10px "DM Mono",
+    monospace;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+.destination-intro .kicker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+.destination-intro .kicker span {
+  width: 30px;
+  height: 1px;
+  background: var(--orange);
+}
+.destination-intro h1,
+.surface-heading h1 {
+  margin-top: 13px;
+  font-size: clamp(42px, 5.3vw, 78px);
+  line-height: 0.97;
+  letter-spacing: -0.055em;
+  font-weight: 500;
+}
+.destination-intro > p:last-child {
+  margin-top: 13px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.choice-canvas {
+  position: absolute;
+  inset: 19% 0 11%;
+  z-index: 2;
+}
+.world-choices {
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  bottom: 8.5%;
+  width: min(750px, 75vw);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13%;
+  transform: translateX(-50%);
+}
+.world-choice {
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  padding: 15px 0 0;
+  display: grid;
+  grid-template-columns: 30px 1fr 34px;
+  align-items: center;
+  color: white;
+  text-align: left;
+  transition:
+    border-color 0.25s,
+    transform 0.25s;
+}
+.world-choice:hover {
+  border-color: var(--orange);
+  transform: translateY(-3px);
+}
+.choice-number {
+  color: var(--orange);
+  font:
+    400 10px "DM Mono",
+    monospace;
+}
+.world-choice strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+}
+.world-choice small {
+  display: block;
+  color: #777;
+  margin-top: 4px;
+  font:
+    400 9px "DM Mono",
+    monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.choice-arrow {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #555;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: 0.2s;
+}
+.world-choice:hover .choice-arrow {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+.drag-hint {
+  position: absolute;
+  z-index: 5;
+  bottom: 2.8%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #5f6263;
+  font:
+    400 9px "DM Mono",
+    monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.visor {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  box-shadow: inset 0 0 100px 35px rgba(0, 0, 0, 0.45);
+  border-radius: 4vw;
+}
+.visor::before,
+.visor::after {
+  content: "";
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  height: 18%;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.visor::before {
+  top: -12%;
+  border-radius: 50% 50% 0 0;
+}
+.visor::after {
+  bottom: -12%;
+  border-radius: 0 0 50% 50%;
+}
+.visor-corner {
+  position: absolute;
+  color: rgba(236, 123, 66, 0.48);
+  font:
+    400 8px "DM Mono",
+    monospace;
+  letter-spacing: 0.14em;
+}
+.visor-top-left {
+  top: 95px;
+  left: 3%;
+}
+.visor-top-right {
+  top: 95px;
+  right: 3%;
+}
+.visor-bottom-left {
+  bottom: 25px;
+  left: 3%;
+}
+.visor-bottom-right {
+  bottom: 25px;
+  right: 3%;
+}
+
+.launch-page {
+  background: #020304;
+  animation: rocketShake 0.12s linear 14 2.05s;
+}
+@keyframes rocketShake {
+  50% {
+    transform: translate(2px, -1px);
+  }
+}
+.star-streaks {
+  opacity: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0 90px,
+    rgba(255, 255, 255, 0.35) 91px,
+    transparent 92px
+  );
+  transform: perspective(300px) rotateX(65deg) scale(3);
+  animation: streaks 1.5s ease-in 2.2s forwards;
+}
+@keyframes streaks {
+  to {
+    opacity: 0.7;
+    transform: perspective(300px) rotateX(65deg) scale(7) translateY(20%);
+  }
+}
+.earth {
+  position: absolute;
+  width: 34vmin;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle at 35% 30%,
+    #d6f4ff 0 3%,
+    #54a4c5 6%,
+    #245580 35%,
+    #10293b 67%,
+    #020304 70%
+  );
+  box-shadow: 0 0 50px #4da9d955;
+  animation: earthLeave 3.3s ease-in forwards;
+}
+@keyframes earthLeave {
+  to {
+    width: 2vmin;
+    left: 20%;
+    top: 25%;
+    opacity: 0.35;
+  }
+}
+.approach-planet {
+  position: absolute;
+  width: 2vmin;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  top: 40%;
+  right: 18%;
+  animation: approach 2s ease-in 3s forwards;
+}
+.approach-planet.moon {
+  background: radial-gradient(circle at 30% 25%, #ddd, #777 65%, #222);
+}
+.approach-planet.mars {
+  background: radial-gradient(circle at 30% 25%, #ef9867, #9c3d27 65%, #32130f);
+}
+@keyframes approach {
+  to {
+    width: 52vmin;
+    right: -8%;
+    top: 18%;
+    box-shadow: 0 0 60px #e4753c33;
+  }
+}
+.rocket-window {
+  position: absolute;
+  inset: -8%;
+  border: 17vw solid #080a0b;
+  border-radius: 50%;
+  box-shadow: inset 0 0 70px #000;
+}
+.launch-hud {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.launch-hud p,
+.launch-hud small {
+  color: var(--orange);
+  font:
+    400 10px "DM Mono",
+    monospace;
+  letter-spacing: 0.24em;
+}
+.launch-hud h1 {
+  margin: 16px 0 25px;
+  font:
+    500 clamp(34px, 6vw, 82px) "Manrope",
+    sans-serif;
+  letter-spacing: -0.04em;
+}
+.progress-track {
+  width: min(400px, 55vw);
+  height: 1px;
+  background: #ffffff33;
+  margin-bottom: 15px;
+}
+.progress-track span {
+  display: block;
+  height: 100%;
+  background: var(--orange);
+  transition: width 0.1s linear;
+}
+.skip-button {
+  position: absolute;
+  z-index: 60;
+  bottom: 6%;
+  right: 5%;
+  color: #bbb;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #ffffff28;
+  padding: 11px 15px;
+  font:
+    400 10px "DM Mono",
+    monospace;
+  letter-spacing: 0.08em;
+}
+.launch-page.reduced {
+  animation: fadeIn 0.7s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+.surface-page {
+  background: #050709;
+}
+.surface-canvas {
+  position: absolute;
+  inset: 0;
+}
+.surface-heading {
+  position: absolute;
+  z-index: 5;
+  top: 19%;
+  left: 5%;
+  width: min(390px, 34vw);
+  pointer-events: none;
+}
+.surface-heading .kicker {
+  margin-bottom: 20px;
+}
+.surface-heading h1 {
+  font-size: clamp(38px, 4.4vw, 66px);
+}
+.surface-heading h1 em {
+  color: var(--orange);
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+}
+.surface-heading > p:last-child {
+  color: #8c8d89;
+  font-size: 13px;
+  line-height: 1.7;
+  margin-top: 24px;
+  width: 82%;
+}
+.explore-hint {
+  position: absolute;
+  z-index: 8;
+  left: 5%;
+  bottom: 11%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--orange);
+}
+.explore-hint span {
+  display: flex;
+  flex-direction: column;
+  color: #6f7171;
+  font:
+    400 9px/1.6 "DM Mono",
+    monospace;
+}
+.explore-hint strong {
+  color: #bfc0bd;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+/* Layer that holds the globe labels, laid exactly over the 3D canvas */
+.label-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.marker {
+  pointer-events: auto;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: white;
+}
+.marker-pulse {
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background: #ff8445;
+  box-shadow: 0 0 15px #ff6b28;
+}
+.marker::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border: 1px solid #ff985c;
+  border-radius: 50%;
+  animation: markerPulse 2s ease-out infinite;
+}
+@keyframes markerPulse {
+  80%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.marker-label {
+  position: absolute;
+  white-space: nowrap;
+  left: 24px;
+  top: -5px;
+  padding: 5px 8px;
+  background: rgba(5, 7, 9, 0.85);
+  border-left: 1px solid var(--orange);
+  font:
+    500 9px "DM Mono",
+    monospace;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+  transition: 0.2s;
+}
+.marker-label small {
+  color: var(--orange);
+  margin-left: 6px;
+}
+.marker:hover .marker-label,
+.marker:focus .marker-label,
+.marker.active .marker-label {
+  opacity: 1;
+  transform: translateX(3px);
+}
+.sound-dock {
+  position: absolute;
+  z-index: 35;
+  right: 4.5%;
+  bottom: 5%;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.sound-dock > span {
+  color: var(--orange);
+  font:
+    400 9px "DM Mono",
+    monospace;
+  letter-spacing: 0.08em;
+}
+.sound-dock button {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #ffffff30;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: #090b0ddc;
+}
+.sound-dock small {
+  color: #686b6b;
+  font:
+    400 8px "DM Mono",
+    monospace;
+  max-width: 140px;
+}
+.caption {
+  position: absolute;
+  z-index: 35;
+  bottom: 13%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: min(520px, 80vw);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 16px;
+  background: #090b0de8;
+  border: 1px solid #ffffff24;
+  color: #d6d4ce;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.caption svg {
+  flex: none;
+  color: var(--orange);
+  margin-top: 2px;
+}
+.story-card {
+  position: absolute;
+  z-index: 40;
+  top: 95px;
+  right: 4%;
+  bottom: 5%;
+  width: min(395px, 38vw);
+  background: rgba(12, 14, 15, 0.94);
+  border: 1px solid #ffffff24;
+  box-shadow: 0 24px 80px #000;
+  display: flex;
+  flex-direction: column;
+  animation: cardIn 0.45s cubic-bezier(0.22, 0.8, 0.25, 1);
+}
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+}
+.card-model model-viewer {
+  --poster-color: transparent;
+  --progress-bar-color: var(--orange);
+  background: transparent;
+}
+.card-model {
+  height: 33%;
+  min-height: 155px;
+  background: radial-gradient(circle, #382318, #131210 65%);
+  border-bottom: 1px solid #ffffff18;
+}
+.card-content {
+  padding: 25px 28px 28px;
+  overflow: auto;
+}
+.card-eyebrow {
+  color: #8b8b85;
+  font:
+    400 9px "DM Mono",
+    monospace;
+  letter-spacing: 0.15em;
+}
+.card-eyebrow span {
+  color: var(--orange);
+  margin-right: 12px;
+}
+/* Small label shown when the story card uses a real NASA 3D model */
+.model-badge {
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  color: #6f7171;
+  letter-spacing: 0.12em;
+}
+.card-content h2 {
+  font-size: clamp(22px, 2.2vw, 34px);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  margin: 12px 0;
+  font-weight: 500;
+}
+.card-intro {
+  color: #bbb8ae;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.card-content dl {
+  margin: 20px 0;
+  border-top: 1px solid #ffffff18;
+}
+.card-content dl div {
+  padding: 15px 0;
+  border-bottom: 1px solid #ffffff18;
+}
+.card-content dt {
+  color: var(--orange);
+  font:
+    500 8px "DM Mono",
+    monospace;
+  letter-spacing: 0.12em;
+  margin-bottom: 6px;
+}
+.card-content dd {
+  color: #a3a19b;
+  font-size: 11px;
+  line-height: 1.55;
+}
+.back-globe {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: white;
+  font:
+    500 10px "DM Mono",
+    monospace;
+  letter-spacing: 0.08em;
+}
+.loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--orange);
+  font:
+    10px "DM Mono",
+    monospace;
+}
+
+.modal-backdrop {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(12px);
+}
+.sources-modal {
+  position: relative;
+  width: min(620px, 100%);
+  max-height: 85vh;
+  overflow: auto;
+  padding: clamp(25px, 5vw, 55px);
+  background: #111315;
+  border: 1px solid #ffffff24;
+  box-shadow: 0 30px 100px #000;
+}
+.sources-modal h2 {
+  font-size: clamp(30px, 5vw, 52px);
+  letter-spacing: -0.045em;
+  margin: 10px 0 18px;
+}
+.sources-modal > p:not(.kicker):not(.source-note) {
+  color: #999a96;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #ffffff25;
+  display: grid;
+  place-items: center;
+}
+.source-list {
+  margin: 25px 0;
+  border-top: 1px solid #ffffff1f;
+}
+.source-list a {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid #ffffff1f;
+  color: #d6d4cd;
+  font-size: 12px;
+}
+.source-list a:hover {
+  color: var(--orange);
+}
+.source-note {
+  display: flex;
+  gap: 9px;
+  color: #6f706d;
+  font:
+    400 9px/1.5 "DM Mono",
+    monospace;
+}
+.source-note svg {
+  flex: none;
+}
+
+@media (max-width: 760px) {
+  .top-nav {
+    height: 65px;
+    padding: 0 20px;
+  }
+  .mobile-menu {
+    display: block;
+  }
+  .top-nav nav {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    padding: 22px;
+    background: rgba(5, 7, 9, 0.97);
+    border-bottom: 1px solid #ffffff20;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .top-nav nav.open {
+    display: flex;
+  }
+  .destination-intro {
+    top: 12%;
+  }
+  .destination-intro h1 {
+    font-size: 43px;
+  }
+  .choice-canvas {
+    inset: 19% -50% 15%;
+  }
+  .world-choices {
+    width: calc(100% - 38px);
+    gap: 8%;
+    bottom: 8%;
+  }
+  .world-choice {
+    grid-template-columns: 22px 1fr 0;
+  }
+  .choice-arrow {
+    display: none;
+  }
+  .world-choice strong {
+    font-size: 14px;
+  }
+  .drag-hint {
+    display: none;
+  }
+  .visor-corner {
+    display: none;
+  }
+  .surface-heading {
+    top: 10%;
+    left: 20px;
+    width: 82vw;
+  }
+  .surface-heading h1 {
+    font-size: 36px;
+  }
+  .surface-heading > p:last-child {
+    margin-top: 12px;
+    font-size: 11px;
+    width: 75%;
+  }
+  .surface-canvas {
+    inset: 10% -35% 0;
+  }
+  .explore-hint {
+    left: 20px;
+    bottom: 12%;
+  }
+  .sound-dock {
+    right: 18px;
+    bottom: 3%;
+  }
+  .sound-dock small {
+    display: none;
+  }
+  .sound-dock > span {
+    display: none;
+  }
+  .caption {
+    bottom: 18%;
+  }
+  .story-card {
+    inset: auto 12px 12px;
+    width: auto;
+    height: 58vh;
+    flex-direction: column;
+  }
+  .card-model {
+    height: 29%;
+    min-height: 110px;
+  }
+  .card-content {
+    padding: 19px 20px;
+  }
+  .card-content dl {
+    margin: 12px 0;
+  }
+  .rocket-window {
+    inset: -4%;
+    border-width: 12vw;
+    border-radius: 35%;
+  }
+  .skip-button {
+    bottom: 9%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
