@@ -352,9 +352,9 @@ function DestinationPage({ onChoose }: { onChoose: (world: WorldId) => void }) {
     </main>
   );
 }
-function playLaunchSound() {
+async function playLaunchSound() {
   const context = new window.AudioContext();
-  void context.resume();
+  await context.resume();
 
   const start = context.currentTime + 0.05;
 
@@ -402,7 +402,10 @@ function playLaunchSound() {
     source.buffer = buffer;
     filter.type = "lowpass";
     filter.frequency.setValueAtTime(180, at);
-    filter.frequency.exponentialRampToValueAtTime(peakFilterHz, at + duration * 0.4);
+    filter.frequency.exponentialRampToValueAtTime(
+      peakFilterHz,
+      at + duration * 0.4,
+    );
     filter.frequency.exponentialRampToValueAtTime(180, at + duration);
 
     gain.gain.setValueAtTime(0.0001, at);
@@ -416,11 +419,11 @@ function playLaunchSound() {
     source.stop(at + duration + 0.02);
   };
 
-  // T-minus 3, 2, 1
+  // Spoken countdown
   if ("speechSynthesis" in window) {
     window.speechSynthesis.cancel();
 
-    ["T-minus three", "T-minus two", "T-minus one"].forEach((words, index) => {
+    ["Three", "Two", "One"].forEach((words, index) => {
       window.setTimeout(() => {
         const utterance = new SpeechSynthesisUtterance(words);
         const voices = window.speechSynthesis.getVoices();
@@ -439,8 +442,8 @@ function playLaunchSound() {
     });
   }
 
-  // Liftoff: airy rush plus a low engine sweep
-  noiseWhoosh(2.1, 1.3, 0.055, 1800);
+  // Liftoff: louder rush plus low engine sweep
+  noiseWhoosh(2.1, 1.3, 0.22, 2400);
 
   const engine = context.createOscillator();
   const engineFilter = context.createBiquadFilter();
@@ -452,7 +455,7 @@ function playLaunchSound() {
   engineFilter.type = "lowpass";
   engineFilter.frequency.value = 380;
   engineGain.gain.setValueAtTime(0.0001, start + 2.1);
-  engineGain.gain.exponentialRampToValueAtTime(0.045, start + 2.3);
+  engineGain.gain.exponentialRampToValueAtTime(0.16, start + 2.3);
   engineGain.gain.exponentialRampToValueAtTime(0.0001, start + 3.4);
 
   engine.connect(engineFilter);
@@ -461,8 +464,8 @@ function playLaunchSound() {
   engine.start(start + 2.1);
   engine.stop(start + 3.42);
 
-  // Approaching the Moon/Mars: softer sweep and arrival chime
-  noiseWhoosh(3.35, 1.0, 0.035, 1200);
+  // Approaching the Moon or Mars: sweep and arrival chime
+  noiseWhoosh(3.35, 1.0, 0.14, 1700);
   tone(880, 3.45, 0.22, 0.055);
   tone(1174, 3.62, 0.32, 0.045);
 
@@ -1118,7 +1121,7 @@ export default function App() {
   const [selected, setSelected] = useState<Equipment | null>(null);
 
   const chooseWorld = (id: WorldId) => {
-    if (sound) playLaunchSound();
+    if (sound) void playLaunchSound();
     setWorldId(id);
     setSelected(null);
     setView("launch");
