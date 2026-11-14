@@ -949,19 +949,17 @@ button {
     scroll-behavior: auto !important;
   }
 }
-/* ---------- Astronaut mouse cursor ---------- */
-
-/* Everywhere: astronaut */
+/* Normal mouse cursor: WALL-E */
 * {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><text x='2' y='32' font-size='30'>🧑‍🚀</text></svg>") 6 6, auto !important;
+  cursor: url("/walle-cursor.png") 12 12, auto !important;
 }
 
-/* Things you can click: rocket */
+/* Clickable elements: EVE */
 button,
 a,
 .marker,
 .world-choice {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><text x='2' y='32' font-size='30'>🚀</text></svg>") 6 6, pointer !important;
+  cursor: url("/eve-clickable.png") 12 12, pointer !important;
 }
 /* ---------- Story card tabs ---------- */
 .story-tabs {
