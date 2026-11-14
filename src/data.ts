@@ -102,19 +102,18 @@ For the first time, humans had landed on the Moon. The world was watching — an
           },
           {
             label: "🛰️ Mission",
-            text: `Landing was only half the adventure. Eagle and its crew still had a long list of tasks to complete.
+            text: `Landing was only the beginning! Eagle still had an important mission to complete.
 
-1. Travel to the Moon as part of the Apollo 11 spacecraft.
-2. Separate from the Command/Service Module, with Michael Collins remaining in lunar orbit.
-3. Fire its descent engine and guide Armstrong and Aldrin towards the surface.
+1. Travel to the Moon with Apollo 11.
+2. Separate from the main spacecraft, leaving Michael Collins in orbit.
+3. Carry Armstrong and Aldrin safely down to the Moon.
 4. Land in the Sea of Tranquility.
-5. Give the astronauts a base for their moonwalk, where they collected rocks, took photographs and set up experiments.
-6. Fire the upper stage engine to lift off from the Moon.
-7. Meet the Command/Service Module again in lunar orbit.
+5. Give the astronauts a place to explore, collect rocks and set up experiments.
+6. Blast off from the Moon and reunite with Collins.
 
-The astronauts returned with 21.55 kilograms of Moon rocks and soil. Those samples gave scientists precious clues about how the Moon formed and changed.
+The astronauts returned to Earth with 21.55 kg of Moon rocks and soil, giving scientists valuable clues about the Moon's history.
 
-Eagle had delivered its crew — and a little piece of the Moon — safely back towards Earth.`,
+Eagle's mission was complete. It had carried humans to the Moon and brought a piece of it back home!`,
           },
           {
             label: "🕰️ Abandoned",
