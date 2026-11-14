@@ -951,15 +951,15 @@ button {
 }
 /* Normal mouse cursor: WALL-E */
 * {
-  cursor: url("/walle-cursor.png") 12 12, auto !important;
+  cursor: url("/walle-cursor-small.png") 12 12, auto !important;
 }
 
-/* Clickable elements: EV */
+/* Clickable elements: EVE */
 button,
 a,
 .marker,
 .world-choice {
-  cursor: url("/ev-clickable.png") 12 12, pointer !important;
+  cursor: url("/ev-clickable-small.png") 12 12, pointer !important;
 }
 /* ---------- Story card tabs ---------- */
 .story-tabs {
