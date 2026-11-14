@@ -714,9 +714,52 @@ function Typewriter({ text, speed = 14 }: { text: string; speed?: number }) {
   );
 }
 
-/* Clickable tabs inside the story card */
-function StoryTabs({ tabs }: { tabs: { label: string; text: string }[] }) {
+/* Clickable story tabs with optional pre-recorded narration */
+function StoryTabs({
+  tabs,
+  soundEnabled,
+}: {
+  tabs: { label: string; text: string; audio?: string }[];
+  soundEnabled: boolean;
+}) {
   const [active, setActive] = useState(0);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    if (!soundEnabled && audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+  }, [soundEnabled]);
+
+  useEffect(() => {
+    return () => {
+      audioRef.current?.pause();
+      audioRef.current = null;
+    };
+  }, []);
+
+  const handleTabClick = (index: number) => {
+    setActive(index);
+
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      audioRef.current = null;
+    }
+
+    window.speechSynthesis?.cancel();
+
+    const audioPath = tabs[index].audio;
+    if (!soundEnabled || !audioPath) return;
+
+    const player = new Audio(audioPath);
+    audioRef.current = player;
+    void player.play().catch((error) => {
+      console.error("Could not play story narration:", error);
+    });
+  };
+
   return (
     <div className="story-tabs">
       <div className="tab-list" role="tablist">
@@ -726,20 +769,28 @@ function StoryTabs({ tabs }: { tabs: { label: string; text: string }[] }) {
             role="tab"
             aria-selected={i === active}
             className={i === active ? "tab active" : "tab"}
-            onClick={() => setActive(i)}
+            onClick={() => handleTabClick(i)}
           >
             {tab.label}
           </button>
         ))}
       </div>
       <p className="tab-panel" role="tabpanel">
-          <Typewriter key={active} text={tabs[active].text} />
+        <Typewriter key={active} text={tabs[active].text} />
       </p>
     </div>
   );
 }
 
-function StoryCard({ item, onBack }: { item: Equipment; onBack: () => void }) {
+function StoryCard({
+  item,
+  onBack,
+  soundEnabled,
+}: {
+  item: Equipment;
+  onBack: () => void;
+  soundEnabled: boolean;
+}) {
   return (
     <aside className="story-card">
       <div className="card-model" aria-hidden={!item.model}>
@@ -782,7 +833,7 @@ function StoryCard({ item, onBack }: { item: Equipment; onBack: () => void }) {
         <h2>{item.name}</h2>
         <p className="card-intro">{item.did}</p>
                 {item.tabs ? (
-          <StoryTabs key={item.id} tabs={item.tabs} />
+          <StoryTabs key={item.id} tabs={item.tabs} soundEnabled={soundEnabled} />
         ) : (
           <dl>
             <div>
@@ -940,7 +991,13 @@ function SurfacePage({
           <Headphones size={15} /> <span>{hovered.voice}</span>
         </div>
       )}
-      {arrived && <StoryCard item={arrived} onBack={() => onSelected(null)} />}
+      {arrived && (
+        <StoryCard
+          item={arrived}
+          onBack={() => onSelected(null)}
+          soundEnabled={soundEnabled}
+        />
+      )}
       <Visor />
     </main>
   );
