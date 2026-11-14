@@ -7,7 +7,7 @@ export type Equipment = {
   year: string;
   lat: number;
   lon: number;
-  type: "lander" | "rover" | "helicopter";
+  type: "lander" | "rover" | "helicopter" | "experiment";
   did: string;
   ended: string;
   now: string;
@@ -129,18 +129,18 @@ Mission accomplished! The rover helped Apollo 15 explore much more of the Moon t
         ],
       },
       {
-        id: "apollo-17",
-        name: "Apollo 17 Lunar Roving Vehicle",
-        shortName: "LRV 3",
-        year: "1972",
-        lat: 20.191,
-        lon: 30.772,
-        type: "rover",
-        did: "Carried the last Apollo moonwalkers on three record-setting expeditions.",
-        ended: "It stopped after 35.7 km, the longest drive of any Apollo rover.",
-        now: "Parked in the Taurus–Littrow valley, close to the Challenger descent stage.",
+        id: "alsep",
+        name: "Apollo Lunar Surface Experiments Package",
+        shortName: "ALSEP",
+        year: "1969",
+        lat: -3.009,
+        lon: -23.424,
+        type: "experiment",
+        did: "Carried scientific instruments that studied moonquakes, the lunar environment, and the Moon's interior after the astronauts departed.",
+        ended: "NASA switched off the Apollo lunar surface experiments on September 30, 1977, ending their scientific operations.",
+        now: "The scientific instruments remain at their Apollo landing sites as historical equipment on the Moon.",
         voice:
-          "I’m the last Apollo rover. I explored Taurus–Littrow, then watched the last humans leave the Moon.",
+          "I'm ALSEP. The astronauts left me behind so I could continue studying the Moon after they returned to Earth.",
       },
             {
         id: "surveyor-3",
@@ -328,4 +328,8 @@ export const sources = [
     label: "NASA/JPL Ingenuity Mars Helicopter",
     url: "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/",
   },
+  {
+  label: "NASA NSSDC — Apollo 12 ALSEP",
+  url: "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-099C",
+},
 ];
