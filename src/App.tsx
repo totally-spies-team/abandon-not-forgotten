@@ -17,6 +17,7 @@ import {
 import React, { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import { Equipment, sources, World, WorldId, worlds } from "./data";
+import { playTransmission, startHum } from "./sounds";
 
 type View = "home" | "launch" | "surface";
 
@@ -486,12 +487,14 @@ function CameraJourney({ traveling }: { traveling: boolean }) {
 function GlobeMarker({
   item,
   active,
+  visited,
   labelLayer,
   onSelect,
   onHover,
 }: {
   item: Equipment;
   active: boolean;
+  visited: boolean;
   labelLayer: React.RefObject<HTMLDivElement | null>;
   onSelect: (equipment: Equipment) => void;
   onHover: (equipment: Equipment | null) => void;
@@ -532,8 +535,8 @@ function GlobeMarker({
           transition: "opacity 0.3s",
         }}
       >
-        <button
-          className={`marker ${active ? "active" : ""}`}
+        <button 
+          className={`marker ${active ? "active" : ""} ${item.labelSide === "left" ? "label-left" : ""} ${visited ? "visited" : ""}`}
           onClick={() => onSelect(item)}
           onFocus={() => onHover(item)}
           onBlur={() => onHover(null)}
@@ -556,12 +559,14 @@ function GlobeMarker({
 function SurfaceGlobe({
   world,
   selected,
+  visited,
   labelLayer,
   onSelect,
   onHover,
 }: {
   world: World;
   selected: Equipment | null;
+  visited: string[];
   labelLayer: React.RefObject<HTMLDivElement | null>;
   onSelect: (equipment: Equipment) => void;
   onHover: (equipment: Equipment | null) => void;
@@ -590,6 +595,7 @@ function SurfaceGlobe({
             key={item.id}
             item={item}
             active={selected?.id === item.id}
+            visited={visited.includes(item.id)}
             labelLayer={labelLayer}
             onSelect={onSelect}
             onHover={onHover}
@@ -615,6 +621,38 @@ function SurfaceGlobe({
    STORY CARD — uses NASA's <model-viewer> when a real model exists
 ------------------------------------------------------------------- */
 
+/* Types text out letter by letter, like a radio transmission. Click it to show everything. */
+function Typewriter({ text, speed = 14 }: { text: string; speed?: number }) {
+  const chars = useMemo(() => Array.from(text), [text]);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setCount(chars.length);
+      return;
+    }
+    // Work out how many letters to show from the time passed, so it never falls behind
+    const start = performance.now();
+    setCount(0);
+    const timer = window.setInterval(() => {
+      const shown = Math.min(chars.length, Math.floor((performance.now() - start) / speed));
+      setCount(shown);
+      if (shown >= chars.length) window.clearInterval(timer);
+    }, 30);
+    return () => window.clearInterval(timer);
+  }, [chars, speed]);
+
+  const done = count >= chars.length;
+  return (
+    <span className="typewriter" onClick={() => setCount(chars.length)}>
+      {chars.slice(0, count).join("")}
+      {!done && <span className="type-cursor">▍</span>}
+      {/* invisible rest of the text keeps the box the same size while typing */}
+      {!done && <span className="type-ghost">{chars.slice(count).join("")}</span>}
+    </span>
+  );
+}
+
 /* Clickable tabs inside the story card */
 function StoryTabs({ tabs }: { tabs: { label: string; text: string }[] }) {
   const [active, setActive] = useState(0);
@@ -634,7 +672,7 @@ function StoryTabs({ tabs }: { tabs: { label: string; text: string }[] }) {
         ))}
       </div>
       <p className="tab-panel" role="tabpanel">
-        {tabs[active].text}
+          <Typewriter key={active} text={tabs[active].text} />
       </p>
     </div>
   );
@@ -722,6 +760,29 @@ function SurfacePage({
   const lastSpoken = useRef("");
   const labelLayer = useRef<HTMLDivElement>(null);
 
+  /* ---------- Collect them all ---------- */
+  // Which machines this visitor has opened. Saved in the browser, so it survives a refresh.
+  const storageKey = `visited-${world.id}`;
+  const [visited, setVisited] = useState<string[]>(() => {
+    try {
+      return JSON.parse(localStorage.getItem(storageKey) || "[]");
+    } catch {
+      return [];
+    }
+  });
+  const total = world.equipment.length;
+  const foundCount = world.equipment.filter((e) => visited.includes(e.id)).length;
+
+  // When a story card opens, remember that machine
+  useEffect(() => {
+    if (!arrived || visited.includes(arrived.id)) return;
+    const next = [...visited, arrived.id];
+    setVisited(next);
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(next));
+    } catch {}
+  }, [arrived]);
+
   useEffect(() => {
     if (!hovered) {
       lastSpoken.current = "";
@@ -741,6 +802,18 @@ function SurfacePage({
   useEffect(() => {
     if (!soundEnabled) window.speechSynthesis?.cancel();
   }, [soundEnabled]);
+
+  // Space sounds: a soft hum while sound is on…
+  useEffect(() => {
+    if (!soundEnabled) return;
+    const stopHum = startHum();
+    return stopHum;
+  }, [soundEnabled]);
+
+  // …and a radio "transmission" every time a story card opens
+  useEffect(() => {
+    if (soundEnabled && arrived) playTransmission();
+  }, [arrived]);
 
   useEffect(() => {
     setArrived(null);
@@ -765,12 +838,25 @@ function SurfacePage({
           <SurfaceGlobe
             world={world}
             selected={selected}
+            visited={visited}
             labelLayer={labelLayer}
             onSelect={onSelected}
             onHover={setHovered}
           />
         </Suspense>
         <div ref={labelLayer} className="label-layer" />
+      </div>
+            {/* Collect them all: progress counter */}
+      <div className="found-counter" aria-live="polite">
+        <span>MACHINES FOUND</span>
+        <strong>
+          {foundCount} / {total}
+        </strong>
+        <div className="found-dots">
+          {world.equipment.map((e) => (
+            <i key={e.id} className={visited.includes(e.id) ? "on" : ""} />
+          ))}
+        </div>
       </div>
       <div className="explore-hint">
         <Rotate3D size={16} />

@@ -1007,3 +1007,83 @@ a,
     transform: translateY(6px);
   }
 }
+/* ---------- Typewriter text ---------- */
+.type-cursor {
+  color: var(--orange);
+  animation: cursorBlink 0.8s steps(1) infinite;
+}
+.type-ghost {
+  visibility: hidden; /* reserves space so the box doesn't jump */
+}
+@keyframes cursorBlink {
+  50% {
+    opacity: 0;
+  }
+}
+/* Leave room under the story card so the sound button can still be clicked */
+.story-card {
+  bottom: calc(5% + 56px);
+}
+@media (max-width: 760px) {
+  .story-card {
+    bottom: 64px;
+  }
+}
+/* ---------- Collect them all: counter ---------- */
+.found-counter {
+  position: absolute;
+  z-index: 36;
+  top: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px;
+  background: #090b0dcc;
+  border: 1px solid #ffffff24;
+  border-radius: 999px;
+  font: 500 9px "DM Mono", monospace;
+  letter-spacing: 0.12em;
+  color: #8c8d89;
+}
+.found-counter strong {
+  color: white;
+  font-size: 12px;
+}
+.found-dots {
+  display: flex;
+  gap: 5px;
+}
+.found-dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid #ffffff40;
+  transition: 0.3s;
+}
+.found-dots i.on {
+  background: #6fdc8c;
+  border-color: #6fdc8c;
+  box-shadow: 0 0 8px #6fdc8c;
+}
+
+/* Visited markers turn green */
+.marker.visited .marker-pulse {
+  background: #6fdc8c;
+  box-shadow: 0 0 15px #3fbf6a;
+}
+.marker.visited::before {
+  border-color: #6fdc8c;
+}
+.marker.visited .marker-label small {
+  color: #6fdc8c;
+}
+@media (max-width: 760px) {
+  .found-counter {
+    top: auto;
+    bottom: 3%;
+    left: 20px;
+    transform: none;
+  }
+}
