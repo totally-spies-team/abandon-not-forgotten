@@ -358,118 +358,61 @@ async function playLaunchSound() {
 
   const start = context.currentTime + 0.05;
 
-  const tone = (
-    frequency: number,
-    delay: number,
-    duration = 0.18,
-    volume = 0.1,
-  ) => {
+  // Three countdown beeps, timed with the visual countdown.
+  [0, 0.7, 1.4].forEach((delay) => {
     const oscillator = context.createOscillator();
     const gain = context.createGain();
     const at = start + delay;
 
     oscillator.type = "sine";
-    oscillator.frequency.setValueAtTime(frequency, at);
+    oscillator.frequency.setValueAtTime(880, at);
+
     gain.gain.setValueAtTime(0.0001, at);
-    gain.gain.exponentialRampToValueAtTime(volume, at + 0.015);
-    gain.gain.exponentialRampToValueAtTime(0.0001, at + duration);
+    gain.gain.exponentialRampToValueAtTime(0.18, at + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.0001, at + 0.22);
 
     oscillator.connect(gain);
     gain.connect(context.destination);
     oscillator.start(at);
-    oscillator.stop(at + duration + 0.02);
-  };
+    oscillator.stop(at + 0.24);
+  });
 
-  const noiseWhoosh = (
-    delay: number,
-    duration: number,
-    volume: number,
-    peakFilterHz: number,
-  ) => {
-    const at = start + delay;
-    const length = Math.ceil(context.sampleRate * duration);
-    const buffer = context.createBuffer(1, length, context.sampleRate);
-    const samples = buffer.getChannelData(0);
+  // One sustained rocket whoosh, from liftoff through the approach.
+  const duration = 3.1;
+  const at = start + 2.1;
+  const length = Math.ceil(context.sampleRate * duration);
+  const buffer = context.createBuffer(1, length, context.sampleRate);
+  const samples = buffer.getChannelData(0);
 
-    for (let i = 0; i < length; i++) {
-      samples[i] = Math.random() * 2 - 1;
-    }
-
-    const source = context.createBufferSource();
-    const filter = context.createBiquadFilter();
-    const gain = context.createGain();
-
-    source.buffer = buffer;
-    filter.type = "lowpass";
-    filter.frequency.setValueAtTime(180, at);
-    filter.frequency.exponentialRampToValueAtTime(
-      peakFilterHz,
-      at + duration * 0.4,
-    );
-    filter.frequency.exponentialRampToValueAtTime(180, at + duration);
-
-    gain.gain.setValueAtTime(0.0001, at);
-    gain.gain.exponentialRampToValueAtTime(volume, at + duration * 0.3);
-    gain.gain.exponentialRampToValueAtTime(0.0001, at + duration);
-
-    source.connect(filter);
-    filter.connect(gain);
-    gain.connect(context.destination);
-    source.start(at);
-    source.stop(at + duration + 0.02);
-  };
-
-  // Spoken countdown
-  if ("speechSynthesis" in window) {
-    window.speechSynthesis.cancel();
-
-    ["Three", "Two", "One"].forEach((words, index) => {
-      window.setTimeout(() => {
-        const utterance = new SpeechSynthesisUtterance(words);
-        const voices = window.speechSynthesis.getVoices();
-        const maleVoice = voices.find((voice) =>
-          /\b(male|david|daniel|guy|mark|james)\b/i.test(voice.name),
-        );
-
-        if (maleVoice) utterance.voice = maleVoice;
-
-        utterance.lang = "en-US";
-        utterance.rate = 0.85;
-        utterance.pitch = 0.72;
-        utterance.volume = 1;
-        window.speechSynthesis.speak(utterance);
-      }, index * 700);
-    });
+  for (let i = 0; i < length; i++) {
+    samples[i] = Math.random() * 2 - 1;
   }
 
-  // Liftoff: louder rush plus low engine sweep
-  noiseWhoosh(2.1, 1.3, 0.22, 2400);
+  const source = context.createBufferSource();
+  const filter = context.createBiquadFilter();
+  const gain = context.createGain();
 
-  const engine = context.createOscillator();
-  const engineFilter = context.createBiquadFilter();
-  const engineGain = context.createGain();
+  source.buffer = buffer;
 
-  engine.type = "sawtooth";
-  engine.frequency.setValueAtTime(120, start + 2.1);
-  engine.frequency.exponentialRampToValueAtTime(48, start + 3.35);
-  engineFilter.type = "lowpass";
-  engineFilter.frequency.value = 380;
-  engineGain.gain.setValueAtTime(0.0001, start + 2.1);
-  engineGain.gain.exponentialRampToValueAtTime(0.16, start + 2.3);
-  engineGain.gain.exponentialRampToValueAtTime(0.0001, start + 3.4);
+  filter.type = "lowpass";
+  filter.frequency.setValueAtTime(180, at);
+  filter.frequency.exponentialRampToValueAtTime(1800, at + 1.2);
+  filter.frequency.setValueAtTime(1800, at + 2.1);
+  filter.frequency.exponentialRampToValueAtTime(400, at + duration);
 
-  engine.connect(engineFilter);
-  engineFilter.connect(engineGain);
-  engineGain.connect(context.destination);
-  engine.start(start + 2.1);
-  engine.stop(start + 3.42);
+  gain.gain.setValueAtTime(0.0001, at);
+  gain.gain.exponentialRampToValueAtTime(0.28, at + 0.5);
+  gain.gain.setValueAtTime(0.28, at + 2.3);
+  gain.gain.exponentialRampToValueAtTime(0.0001, at + duration);
 
-  // Approaching the Moon or Mars: sweep and arrival chime
-  noiseWhoosh(3.35, 1.0, 0.14, 1700);
-  tone(880, 3.45, 0.22, 0.055);
-  tone(1174, 3.62, 0.32, 0.045);
+  source.connect(filter);
+  filter.connect(gain);
+  gain.connect(context.destination);
 
-  window.setTimeout(() => void context.close(), 5000);
+  source.start(at);
+  source.stop(at + duration);
+
+  window.setTimeout(() => void context.close(), 6000);
 }
 /* ------------------------------------------------------------------
    LAUNCH — countdown animation
@@ -1120,12 +1063,13 @@ export default function App() {
   const [sourcesOpen, setSourcesOpen] = useState(false);
   const [selected, setSelected] = useState<Equipment | null>(null);
 
-  const chooseWorld = (id: WorldId) => {
-    if (sound) void playLaunchSound();
-    setWorldId(id);
-    setSelected(null);
-    setView("launch");
-  };
+const chooseWorld = async (id: WorldId) => {
+  if (sound) await playLaunchSound();
+
+  setWorldId(id);
+  setSelected(null);
+  setView("launch");
+};
 
   const goHome = () => {
     window.speechSynthesis?.cancel();
