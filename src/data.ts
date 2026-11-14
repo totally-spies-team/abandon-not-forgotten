@@ -273,7 +273,7 @@ But it wasn't forgotten! In November 1969, the Apollo 12 astronauts landed only 
     focusLon: -20, // Viking, Sojourner and Opportunity
     // modelUrl: "/models/mars-nasa.glb",
     equipment: [
-      {
+            {
         id: "sojourner",
         name: "Sojourner Rover",
         shortName: "Sojourner",
@@ -286,6 +286,7 @@ But it wasn't forgotten! In November 1969, the Apollo 12 astronauts landed only 
         now: "It rests in Ares Vallis, likely near the Pathfinder lander.",
         voice:
           "I’m Sojourner. In 1997, I became the first little rover to roll across another planet.",
+        model: "/models/equipment/mars-sojourner-rover-model.glb",
         tabs: [
           {
             label: "📖 About",
