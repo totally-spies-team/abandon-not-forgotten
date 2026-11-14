@@ -69,25 +69,64 @@ export const worlds: Record<WorldId, World> = {
         lat: 26.132,
         lon: 3.634,
         type: "rover",
-        did: "Carried astronauts across 27.8 km of the Hadley–Apennine landscape.",
-        ended: "Its final drive ended beside the lunar module Falcon after three excursions.",
-        now: "Parked near Hadley Rille, its camera pointed toward the departing astronauts.",
+        did: "Became the first vehicle driven by astronauts on the Moon and helped them explore 27.9 km of the Hadley–Apennine region.",
+        ended: "Its final drive took place during Apollo 15's third moonwalk on 2 August 1971. The astronauts left it on the Moon before returning to orbit.",
+        now: "It remains parked near the Apollo 15 landing site in the Hadley–Apennine region.",
         voice:
-          "I’m the first lunar rover. In 1971, I carried Apollo 15 farther than astronauts had ever walked.",
-      },
-      {
-        id: "apollo-16",
-        name: "Apollo 16 Lunar Roving Vehicle",
-        shortName: "LRV 2",
-        year: "1972",
-        lat: -8.973,
-        lon: 15.501,
-        type: "rover",
-        did: "Helped explore the rugged Descartes Highlands over three days.",
-        ended: "After 26.7 km of driving, it was parked for the crew’s departure.",
-        now: "It rests near the Orion lunar module descent stage in the Descartes Highlands.",
-        voice:
-          "I’m Apollo 16’s rover. My small wheels crossed the ancient Descartes Highlands in 1972.",
+          "Hi, I’m the Apollo 15 lunar rover! In 1971, I helped astronauts explore the Moon by driving almost 28 km across its rocky surface.",
+        tabs: [
+          {
+            label: "📖 About",
+            text: `Meet the Apollo 15 Lunar Roving Vehicle, also called the LRV! 🚙🌕 It was the first vehicle ever driven by astronauts on the Moon.
+
+It travelled with astronauts David Scott and James Irwin during the Apollo 15 mission. Its job was to help them explore places that would have been too far away to reach easily on foot.`,
+          },
+          {
+            label: "🔧 Function",
+            text: `The lunar rover was like a small electric car made for the Moon!
+
+🛞 Carried astronauts across the lunar surface
+🪨 Helped them reach different places to collect Moon rocks and soil
+📸 Helped astronauts explore and photograph the landscape
+🧪 Supported the science work during their moonwalks
+
+It helped the astronauts explore areas within about 5 km of their landing site.`,
+          },
+          {
+            label: "🚀 Launch",
+            text: `Apollo 15 launched from Cape Canaveral, Florida, on 26 July 1971 aboard a Saturn V rocket.
+
+The rover travelled to the Moon inside the lunar module Falcon. Falcon landed on 30 July 1971, and the astronauts unloaded and drove the rover during their first moonwalk on 31 July.`,
+          },
+          {
+            label: "🛰️ Mission",
+            text: `The rover had a busy adventure on the Moon!
+
+1. 🌕 Apollo 15 landed near the Apennine Mountains on 30 July 1971.
+2. 🛞 David Scott and James Irwin unloaded the rover during their first moonwalk on 31 July.
+3. 🗺️ They drove it on three exploration trips around the landing area.
+4. 🪨 The astronauts collected 77.31 kg of Moon rocks and soil during the mission.
+5. 🏁 Across the three trips, the rover travelled about 27.9 km.
+
+The three moonwalks together lasted 18 hours and 35 minutes.`,
+          },
+          {
+            label: "🕰️ Abandoned",
+            text: `The rover was left on the Moon on 2 August 1971, after the astronauts finished their third and final moonwalk.
+
+After spending 66 hours and 55 minutes on the lunar surface, the astronauts lifted off in Falcon's upper stage to meet their spacecraft orbiting the Moon. The rover stayed behind at the Apollo 15 landing site.`,
+          },
+          {
+            label: "❓ Why?",
+            text: `The rover was made to explore the Moon, not to travel back to Earth.
+
+🚀 The astronauts returned to orbit using the upper part of the lunar module, Falcon.
+🛞 The rover was surface equipment, so it stayed where the astronauts had finished exploring.
+🌕 Leaving it behind allowed the mission to bring the astronauts home without carrying the rover.
+
+Mission accomplished! The rover helped Apollo 15 explore much more of the Moon than astronauts could have covered on foot.`,
+          },
+        ],
       },
       {
         id: "apollo-17",
