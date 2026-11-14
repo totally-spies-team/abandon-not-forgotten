@@ -133,7 +133,6 @@ The upper section was later released into lunar orbit. Its exact fate is unknown
         now: "It remains parked near the Apollo 15 landing site in the Hadley–Apennine region.",
         voice:
           "Hi, I’m the Apollo 15 lunar rover! In 1971, I helped astronauts explore the Moon by driving almost 28 km across its rocky surface.",
-        model: "/models/equipment/lrv.glb",
         tabs: [
           {
             label: "📖 About",
@@ -287,7 +286,6 @@ But it wasn't forgotten! In November 1969, the Apollo 12 astronauts landed only 
         now: "It rests in Ares Vallis, likely near the Pathfinder lander.",
         voice:
           "I’m Sojourner. In 1997, I became the first little rover to roll across another planet.",
-      },
         tabs: [
           {
             label: "📖 About",
@@ -331,6 +329,7 @@ Sojourner remains on Mars, likely near the Pathfinder lander in Ares Vallis.`,
 ✅ Pathfinder returned its final data on 27 September 1997, ending the mission.`,
           },
         ],
+      },
       {
         id: "spirit",
         name: "Spirit Rover",
