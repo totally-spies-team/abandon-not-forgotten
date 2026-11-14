@@ -133,6 +133,7 @@ The upper section was later released into lunar orbit. Its exact fate is unknown
         now: "It remains parked near the Apollo 15 landing site in the Hadley–Apennine region.",
         voice:
           "Hi, I’m the Apollo 15 lunar rover! In 1971, I helped astronauts explore the Moon by driving almost 28 km across its rocky surface.",
+        model: "/models/equipment/lrv.glb",
         tabs: [
           {
             label: "📖 About",
