@@ -380,6 +380,7 @@ Scientists wanted to know whether Mars was once warm and wet enough to support l
   now: "Still on Mars at Meridiani Planum, where it landed in January 2004.",
   voice:
     "I'm Opportunity! I was built to explore for 90 days, but I kept rolling for almost 15 years and travelled over 45 kilometres!",
+  model: "/models/equipment/opportunity.glb",
   tabs: [
     {
       label: "📖 About",
