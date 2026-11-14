@@ -201,6 +201,46 @@ Mission accomplished! The rover helped Apollo 15 explore much more of the Moon t
         now: "The scientific instruments remain at their Apollo landing sites as historical equipment on the Moon.",
         voice:
           "I'm ALSEP. The astronauts left me behind so I could continue studying the Moon after they returned to Earth.",
+        tabs: [
+          {
+            label: "About",
+            text: `I wasn't a spaceship, and I wasn't meant to come home. I was a small science station that Apollo 12 astronauts left on the Moon.
+
+Once they returned to Earth, I kept working alone. I was the first full ALSEP station deployed on the lunar surface.`,
+          },
+          {
+            label: "What I studied",
+            text: `The Moon looks quiet, but I was there to detect what people could not easily see.
+
+My instruments measured moonquakes, studied the Moon's magnetic field, and examined particles from the Sun. I sent my readings back to Earth by radio.`,
+          },
+          {
+            label: "The journey",
+            text: `I travelled to the Moon with Apollo 12, which launched on 14 November 1969.
+
+After landing, astronauts Pete Conrad and Alan Bean carried my instruments away from their lunar module and set them up about 600 to 700 feet away.`,
+          },
+          {
+            label: "My mission",
+            text: `The astronauts unpacked my instruments and arranged them around a central station.
+
+Then Mission Control switched me on. I began sending measurements to Earth, where scientists could study the Moon without being there in person.
+
+I even detected vibrations from the astronauts moving around and their lunar module lifting off.`,
+          },
+          {
+            label: "After Apollo 12",
+            text: `The astronauts went home, but my work continued. I kept sending information from the Moon for years.
+
+On 30 September 1977, NASA sent the command to switch off the ALSEP stations. My long watch was over.`,
+          },
+          {
+            label: "Why I stayed",
+            text: `A person could only explore the Moon for a short time. I could stay behind and keep measuring what happened long after the astronauts left.
+
+That gave scientists a much longer record of the Moon than one visit could provide.`,
+          },
+        ],
       },
             {
         id: "surveyor-3",
