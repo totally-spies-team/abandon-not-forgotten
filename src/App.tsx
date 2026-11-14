@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import React, { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
-import { Equipment, sources, World, WorldId, worlds } from "./data";
+import { Equipment, sources, team, World, WorldId, worlds } from "./data";
 import { playTransmission, startHum } from "./sounds";
 
 type View = "home" | "launch" | "surface";
@@ -345,6 +345,7 @@ function DestinationPage({ onChoose }: { onChoose: (world: WorldId) => void }) {
           </button>
         ))}
       </div>
+      <div className="team-credit">A mission by {team.name}</div>
       <div className="drag-hint">
         <Rotate3D size={15} /> Planets drift in real time
       </div>
@@ -1040,6 +1041,10 @@ function SourcesModal({ onClose }: { onClose: () => void }) {
           <Info size={15} /> Coordinates are approximate and intended for educational orientation on
           the interactive globe.
         </p>
+        <div className="crew">
+          <p className="kicker">MISSION CREW · {team.name}</p>
+          <p className="crew-names">{team.members.join("  ·  ")}</p>
+        </div>
       </section>
     </div>
   );

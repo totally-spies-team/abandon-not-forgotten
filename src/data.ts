@@ -919,3 +919,8 @@ export const sources = [
   url: "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-099C",
 },
 ];
+/* ---------- Team credits ---------- */
+export const team = {
+  name: "Totally Spies",
+  members: ["Izzati", "Sabrina", "Qibah", "Nana"],
+};
