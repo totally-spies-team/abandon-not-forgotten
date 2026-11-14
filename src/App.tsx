@@ -615,6 +615,31 @@ function SurfaceGlobe({
    STORY CARD — uses NASA's <model-viewer> when a real model exists
 ------------------------------------------------------------------- */
 
+/* Clickable tabs inside the story card */
+function StoryTabs({ tabs }: { tabs: { label: string; text: string }[] }) {
+  const [active, setActive] = useState(0);
+  return (
+    <div className="story-tabs">
+      <div className="tab-list" role="tablist">
+        {tabs.map((tab, i) => (
+          <button
+            key={tab.label}
+            role="tab"
+            aria-selected={i === active}
+            className={i === active ? "tab active" : "tab"}
+            onClick={() => setActive(i)}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+      <p className="tab-panel" role="tabpanel">
+        {tabs[active].text}
+      </p>
+    </div>
+  );
+}
+
 function StoryCard({ item, onBack }: { item: Equipment; onBack: () => void }) {
   return (
     <aside className="story-card">
@@ -649,16 +674,20 @@ function StoryCard({ item, onBack }: { item: Equipment; onBack: () => void }) {
         </p>
         <h2>{item.name}</h2>
         <p className="card-intro">{item.did}</p>
-        <dl>
-          <div>
-            <dt>LAST TRANSMISSION</dt>
-            <dd>{item.ended}</dd>
-          </div>
-          <div>
-            <dt>WHERE IT SLEEPS</dt>
-            <dd>{item.now}</dd>
-          </div>
-        </dl>
+                {item.tabs ? (
+          <StoryTabs key={item.id} tabs={item.tabs} />
+        ) : (
+          <dl>
+            <div>
+              <dt>LAST TRANSMISSION</dt>
+              <dd>{item.ended}</dd>
+            </div>
+            <div>
+              <dt>WHERE IT SLEEPS</dt>
+              <dd>{item.now}</dd>
+            </div>
+          </dl>
+        )}
         <button className="back-globe" onClick={onBack}>
           <ArrowLeft size={16} /> Back to globe
         </button>

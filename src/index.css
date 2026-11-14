@@ -949,3 +949,61 @@ button {
     scroll-behavior: auto !important;
   }
 }
+/* ---------- Astronaut mouse cursor ---------- */
+
+/* Everywhere: astronaut */
+* {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><text x='2' y='32' font-size='30'>🧑‍🚀</text></svg>") 6 6, auto !important;
+}
+
+/* Things you can click: rocket */
+button,
+a,
+.marker,
+.world-choice {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><text x='2' y='32' font-size='30'>🚀</text></svg>") 6 6, pointer !important;
+}
+/* ---------- Story card tabs ---------- */
+.story-tabs {
+  margin: 20px 0;
+}
+.tab-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.tab {
+  padding: 6px 10px;
+  border: 1px solid #ffffff24;
+  border-radius: 999px;
+  color: #a3a19b;
+  font: 500 10px "DM Mono", monospace;
+  letter-spacing: 0.04em;
+  transition: 0.2s;
+}
+.tab:hover {
+  border-color: var(--orange);
+  color: white;
+}
+.tab.active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #050709;
+}
+.tab-panel {
+  white-space: pre-line; /* keeps the line breaks from data.ts */
+  color: #d6d4ce;
+  font-size: 13px;
+  line-height: 1.7;
+  padding: 14px 16px;
+  background: #ffffff08;
+  border-left: 2px solid var(--orange);
+  animation: tabIn 0.3s ease;
+}
+@keyframes tabIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}

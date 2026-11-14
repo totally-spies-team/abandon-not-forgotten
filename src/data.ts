@@ -14,6 +14,7 @@ export type Equipment = {
   voice: string;
   /** Optional NASA 3D model (.glb in public/models/equipment). Shown with <model-viewer>. */
   model?: string;
+  tabs?: { label: string; text: string }[];
 };
 
 export type World = {
@@ -101,6 +102,65 @@ export const worlds: Record<WorldId, World> = {
         now: "Parked in the Taurus–Littrow valley, close to the Challenger descent stage.",
         voice:
           "I’m the last Apollo rover. I explored Taurus–Littrow, then watched the last humans leave the Moon.",
+      },
+            {
+        id: "surveyor-3",
+        name: "Surveyor 3",
+        shortName: "Surveyor 3",
+        year: "1967",
+        lat: -3.0,
+        lon: -23.41,
+        type: "lander",
+        did: "A robot scout sent to check the Moon was safe for astronauts to land on.",
+        ended: "It went silent on 4 May 1967, when the freezing lunar night arrived.",
+        now: "Still standing in the Ocean of Storms, 180 m from the Apollo 12 landing site.",
+        voice:
+          "I’m Surveyor 3. I bounced twice when I landed, and two years later, astronauts came to visit me!",
+        tabs: [
+          {
+            label: "📖 About",
+            text: `Before astronauts could walk on the Moon, NASA had a big worry: what if the ground was too soft? Some scientists thought spacecraft might sink into deep dust, like quicksand.
+
+So NASA sent robot scouts called Surveyors to find out first. Each one was about 3 metres tall, stood on three legs and had a camera for eyes.`,
+          },
+          {
+            label: "🔧 Function",
+            text: `📸 Took thousands of close-up photos of the Moon
+🦶 Tested whether the ground could hold a spacecraft
+🥄 Dug trenches with a little robot scoop
+🗺️ Helped NASA pick safe landing spots for Apollo`,
+          },
+          {
+            label: "🚀 Launch",
+            text: `Surveyor 3 blasted off on 17 April 1967 and landed on 20 April 1967.
+
+It was one of seven Surveyors launched between 1966 and 1968. Five landed safely, and two crashed.`,
+          },
+          {
+            label: "🛰️ Mission",
+            text: `1. Blast off from Florida on an Atlas-Centaur rocket 🔥
+2. Fly to the Moon in about 3 days
+3. Fire a rocket backwards to slow down
+4. Touch down on three padded legs
+5. Take photos, dig and beam the results to Earth
+
+😅 Fun fail: shiny rocks confused its radar and its engine didn't switch off in time, so it bounced twice before landing!`,
+          },
+          {
+            label: "🕰️ Abandoned",
+            text: `Surveyor 3 sent its last message on 4 May 1967, just two weeks after landing.
+
+But it wasn't forgotten! In November 1969, the Apollo 12 astronauts landed only 180 m away and walked over to visit. They took its camera and scoop home to Earth. It's the only robot on another world that people have ever visited.`,
+          },
+          {
+            label: "❄️ Why?",
+            text: `🌑 A night on the Moon lasts about two weeks and gets colder than −150 °C. Surveyor ran on solar power, so in the dark its electronics froze.
+
+🎫 It was a one-way trip. Surveyors were never built to come home.
+
+✅ Mission accomplished! It proved the ground was firm enough for astronauts to land on.`,
+          },
+        ],
       },
     ],
   },
