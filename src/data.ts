@@ -330,8 +330,9 @@ Sojourner remains on Mars, likely near the Pathfinder lander in Ares Vallis.`,
 🔬 Its measurements helped scientists study Martian rocks and soil up close.
 
 ✅ Pathfinder returned its final data on 27 September 1997, ending the mission.`,
+          },
         ],
-        },
+      },
       {
         id: "spirit",
         name: "Spirit Rover",
